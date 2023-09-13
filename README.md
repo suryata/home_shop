@@ -50,8 +50,10 @@ INSTALLED_APPS = [
     'main',
     ...
 ]
+```
 
 # *Melakukan routing pada proyek agar dapat menjalankan aplikasi main*
+
 
 
 
