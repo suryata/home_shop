@@ -3,8 +3,7 @@
 **I Made Surya Anahata Putra**<br/>
 **2206081370**<br/>
 **PBP A**<br/>
-**Link Project**:<br/>
-[HomeShop](https://home-shop.adaptable.app).
+**Link Project**:[HomeShop](https://home-shop.adaptable.app)
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
