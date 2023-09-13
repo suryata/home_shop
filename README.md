@@ -345,7 +345,7 @@ View: Menampilkan informasi kepada pengguna. Dalam MVVM, View biasanya lebih pas
 ViewModel: Ini adalah komponen yang menghubungkan antara Model dan View. ViewModel mengubah data dari Model menjadi format yang dapat ditampilkan oleh View dan mengatur tindakan pengguna yang dapat mempengaruhi Model. ViewModel sering digunakan dalam aplikasi berbasis antarmuka pengguna (UI) yang kompleks dan dalam pengembangan aplikasi berbasis perangkat lunak modern.
 Perbedaan: MVVM adalah pola desain yang umumnya digunakan dalam pengembangan aplikasi berbasis antarmuka pengguna (UI), terutama aplikasi berbasis perangkat lunak modern seperti aplikasi web yang menggunakan teknologi seperti React, Angular, atau Vue.js. 
 
-Perbedaan utama ketiganya:
+**Perbedaan utama ketiganya:**
 
 *MVC adalah pola desain umum yang memisahkan Model, View, dan Controller.
 *MVT adalah variasi MVC yang digunakan dalam Django, dengan View yang mengambil peran Controller dan Template yang mengambil peran View.
