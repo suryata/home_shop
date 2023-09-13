@@ -3,6 +3,7 @@
 **I Made Surya Anahata Putra**<br/>
 **2206081370**<br/>
 **PBP A**<br/>
+
 **Link Project**:[ HomeShop](https://home-shop.adaptable.app)
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
@@ -35,4 +36,23 @@ urllib3
 ALLOWED_HOSTS = ["*"]
 ...
 ```
+8. Jalankan server Django dengan perintah `python manage.py runserver` (Windows) atau `./manage.py runserver` (Unix).
+9. Buka http://localhost:8000 pada web untuk melihat animasi roket sebagai tanda aplikasi Django telah berhasil dibuat.
+10. Untuk menghentikan server, tekan Ctrl+C (Windows/Linux) atau Control+C (Mac) pada shell.
+11. Matikan *virtual environtment* dengan perintah `deactivate`
+
+# *Membuat aplikasi dengan nama main pada proyek*
+1. Jalankan perintah `python manage.py startapp main` di terminal atau *command prompt* yang dibuka dari direktori proyek yang sudah dibuat. 
+2. Buka `settings.py` untuk menambahkan ``main`` ke dalam daftar aplikasi pada bagian *INSTALLED_APPS*.
+```python
+INSTALLED_APPS = [
+    ...,
+    'main',
+    ...
+]
+
+# *Melakukan routing pada proyek agar dapat menjalankan aplikasi main*
+
+
+
 
