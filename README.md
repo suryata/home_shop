@@ -7,11 +7,7 @@
 **Link Project**:[ HomeShop](https://home-shop.adaptable.app)
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
-2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
-3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
-4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
-Bonus: Kamu akan mendapatkan nilai bonus pada penilaian tugas ini apabila kamu berhasil mengimplementasikan dan mendemonstrasikan testing dasar selain testing yang diajarkan di tutorial.
-
+   
 # **Membuat sebuah proyek Django baru**
 1. Buat direktori baru dengan nama yang diinginkan, contohnya 'projectbaru'. Kemudian buka command prompt (Windows) atau terminal shell (Unix) dan masuk kedalam direktori tersebut.
 2. Buat *virtual environment* untuk mengisolasi proyek kita dengan perintah `python -m venv env`.
@@ -308,9 +304,51 @@ GitHub.sublime-settings
 ```
 7. Untuk melakukan penyimpanan pembaruan dapat melakukan `add`, `commit`, dan `push` dari terminal atau *command prompt* yang dibuka dari direktori lokal.
 
+2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
+## **Bagan *request* dan *response client* dengan Django**
+![bagan](https://cdn.discordapp.com/attachments/1037716635227799613/1151366728345993226/image0.jpg)
+**Penjelasan**
+* *User*/pengguna mengakses website dan melakukan *HTTP request*
+* *Request* yang masuk diteruskan ke `urls.py` dan akan melakukan proses pencarian terhadap *pattern* url yang sesuai.
+* Setelah ditemukan, Django akan memanggil fungsi yang sesuai pada `views.py`, *logic handling* mengenai database dan mengakses template yang sesuai akan dilakukan disini. Data dari database dapat diakses dan diproses sesuai *logic* dari `models.py`.
+* *Database* adalah tempat dimana data aplikasi disimpan, dimana data disini dapat diubah sengan perintah dari `models.py`.
+* *Template* disini berfungsi untuk mengatur tampilan halaman web yang akan dikembalikan ke *user*
+* Kemudian setelah *logic handle* pada views.py selesai maka akan menampilkan tampilan yang sesuai ke user berupa HTTP response
 
+## **Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?**
 
+Virtual environment adalah lingkungan yang terisolasi yang digunakan oleh pengembang perangkat lunak untuk mengelola dependensi dan paket yang dibutuhkan oleh proyek mereka. Kita menggunakan *virtual environment* untuk mengisolasi lingkungan kerja kita dari lingkungan kerja lainnya. Dengan virtual environment, kita dapat menginstal versi Python dan modul yang berbeda untuk setiap proyek yang kita kerjakan. Hal ini dapat mencegah terjadinya konflik antar proyek, karena masing-masing proyek memiliki lingkungannya sendiri.
 
+Tanpa menggunakan *virtual environment* sebetulnya kita tetap bisa membuat aplikasi web berbasis Django. Namun hal ini tidak disarankan karena dapat menyebabkan bentroknya package serta dependencies yang berbeda versi dengan yang sudah ada di perangkat kita. Selain itu, dalam berbagi proyek dengan orang lain menjadi lebih sulit karena mereka mungkin memiliki versi Django atau paket lain yang berbeda di sistem mereka. Maka dari itu, disarankan untuk mengaktifkan virtual environment untuk menghindari hal-hal tersebut dan membuat pengembangan web berbasis Django lebih efektif.
+
+## **Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya**
+MVC(Model—View—Controller), MVT(Model View Template), dan MVVM(Model — View — ViewModel ) adalah tiga pola desain perangkat lunak yang digunakan dalam pengembangan aplikasi untuk memisahkan komponen aplikasi dan meningkatkan pemahaman, pemeliharaan, serta skalabilitas kode.
+
+1. MVC (Model-View-Controller):
+
+Model: Bertanggung jawab untuk mengelola data dan logika dalam aplikasi. Ini adalah komponen yang merepresentasikan struktur data aplikasi dan berurusan dengan perubahan data dan validasi.
+View: Menampilkan informasi kepada pengguna dan menangani tampilan grafis atau antarmuka pengguna (UI). Ini menerima input dari pengguna dan mengirimkannya ke Controller.
+Controller: Bertindak sebagai perantara antara Model dan View. Ini mengambil input dari pengguna, memprosesnya, berkomunikasi dengan Model untuk mendapatkan atau memodifikasi data, dan memperbarui View.
+
+2. MVT (Model-View-Template):
+
+Model: Serupa dengan MVC, Model mengelola logika dan data aplikasi.
+View: Menampilkan informasi kepada pengguna, tetapi dalam konteks Django (framework Python untuk pengembangan web), View adalah komponen yang mengatur tampilan dan berfungsi sebagai penghubung antara Model dan Template.
+Template: Ini adalah bagian yang mengatur tampilan atau presentasi data. Template menggunakan sintaks template khusus untuk mengambil data dari Model dan mempresentasikannya dalam HTML.
+Perbedaan: MVT adalah varian dari MVC yang digunakan dalam Django. Dalam MVT, View berfungsi lebih seperti Controller dalam MVC, sementara Template menggantikan peran View dalam MVC.
+
+3. MVVM (Model-View-ViewModel):
+
+Model: Seperti dalam MVC dan MVT, Model mengelola logika bisnis dan data aplikasi.
+View: Menampilkan informasi kepada pengguna. Dalam MVVM, View biasanya lebih pasif daripada dalam MVC atau MVT. Ini tidak memiliki logika bisnis dan hanya menampilkan apa yang diberikan oleh ViewModel.
+ViewModel: Ini adalah komponen yang menghubungkan antara Model dan View. ViewModel mengubah data dari Model menjadi format yang dapat ditampilkan oleh View dan mengatur tindakan pengguna yang dapat mempengaruhi Model. ViewModel sering digunakan dalam aplikasi berbasis antarmuka pengguna (UI) yang kompleks dan dalam pengembangan aplikasi berbasis perangkat lunak modern.
+Perbedaan: MVVM adalah pola desain yang umumnya digunakan dalam pengembangan aplikasi berbasis antarmuka pengguna (UI), terutama aplikasi berbasis perangkat lunak modern seperti aplikasi web yang menggunakan teknologi seperti React, Angular, atau Vue.js. 
+
+Perbedaan utama ketiganya:
+
+MVC adalah pola desain umum yang memisahkan Model, View, dan Controller.
+MVT adalah variasi MVC yang digunakan dalam Django, dengan View yang mengambil peran Controller dan Template yang mengambil peran View.
+MVVM adalah pola desain yang digunakan dalam pengembangan antarmuka pengguna modern, dengan ViewModel yang menghubungkan antara Model dan View.
 
 
 
