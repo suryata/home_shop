@@ -347,11 +347,11 @@ Perbedaan: MVVM adalah pola desain yang umumnya digunakan dalam pengembangan apl
 
 **Perbedaan utama ketiganya:**
 
-*MVC adalah pola desain umum yang memisahkan Model, View, dan Controller.
+*MVC adalah pola desain umum yang memisahkan Model, View, dan Controller. Disini view bekerja menampilkan antarmuka pengguna dan Controller memproses input pengguna.
 
 *MVT adalah variasi MVC yang digunakan dalam Django, dengan View yang mengambil peran Controller dan Template yang mengambil peran View.
 
-*MVVM adalah pola desain yang digunakan dalam pengembangan antarmuka pengguna modern, dengan ViewModel yang menghubungkan antara Model dan View.
+*MVVM adalah pola desain yang digunakan dalam pengembangan antarmuka pengguna modern, dengan ViewModel yang menghubungkan antara Model dan View. Disini view yang bekerja menampilkan antarmuka pengguna dan ViewModel yang memproses input pengguna.
 
 
 
