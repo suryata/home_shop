@@ -60,9 +60,8 @@ INSTALLED_APPS = [
    ...
     path('main/', include('main.urls')),
    ...
-]
-```
-
+   ]
+   ```
 
 ## **Membuat model pada aplikasi main dengan nama Item dan memiliki atribut wajib**
 1. Buka berkas models.py pada direktori aplikasi main
