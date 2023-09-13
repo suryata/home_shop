@@ -6,7 +6,7 @@
 
 **Link Project**:[ HomeShop](https://home-shop.adaptable.app)
 
-1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+## **1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).**
    
 ## **Membuat sebuah proyek Django baru**
 1. Buat direktori baru dengan nama yang diinginkan, contohnya 'projectbaru'. Kemudian buka command prompt (Windows) atau terminal shell (Unix) dan masuk kedalam direktori tersebut.
@@ -102,7 +102,7 @@ class Item(models.Model):
   
 4.  Buatlah direktori templates pada direktori main dan tambahkan berkas main.html
 5.  Modifikasi template main.html pada direktori templates yang ada pada main, contohnya:
-   ```
+   ```html
 <html>
 <head>
     <title>{{app_name}}</title>
@@ -304,7 +304,7 @@ GitHub.sublime-settings
 ```
 7. Untuk melakukan penyimpanan pembaruan dapat melakukan `add`, `commit`, dan `push` dari terminal atau *command prompt* yang dibuka dari direktori lokal.
 
-2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
+## **2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html**
    
 ## **Bagan *request* dan *response client* dengan Django**
 ![bagan](https://cdn.discordapp.com/attachments/1037716635227799613/1151366728345993226/image0.jpg)
