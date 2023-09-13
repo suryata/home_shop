@@ -8,7 +8,7 @@
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
    
-# **Membuat sebuah proyek Django baru**
+## **Membuat sebuah proyek Django baru**
 1. Buat direktori baru dengan nama yang diinginkan, contohnya 'projectbaru'. Kemudian buka command prompt (Windows) atau terminal shell (Unix) dan masuk kedalam direktori tersebut.
 2. Buat *virtual environment* untuk mengisolasi proyek kita dengan perintah `python -m venv env`.
 3. Kemudian aktifkan *virtual environment* dengan perintah `env\Scripts\activate.bat` untuk Windows dan `source env/bin/activate` untuk Unix (Mac/Linux).
@@ -37,7 +37,7 @@ ALLOWED_HOSTS = ["*"]
 10. Untuk menghentikan server, tekan Ctrl+C (Windows/Linux) atau Control+C (Mac) pada shell.
 11. Matikan *virtual environtment* dengan perintah `deactivate`
 
-# *Membuat aplikasi dengan nama main pada proyek*
+## **Membuat aplikasi dengan nama main pada proyek**
 1. Jalankan perintah `python manage.py startapp main` di terminal atau *command prompt* yang dibuka dari direktori proyek yang sudah dibuat. 
 2. Buka `settings.py` untuk menambahkan ``main`` ke dalam daftar aplikasi pada bagian *INSTALLED_APPS*.
 ```python
@@ -48,7 +48,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-# *Melakukan routing pada proyek agar dapat menjalankan aplikasi main*
+## **Melakukan routing pada proyek agar dapat menjalankan aplikasi main**
 1. Buka berkas urls.py pada direktori proyek
 2. Impor fungsi include dari django.urls seperti ini:
    ```
@@ -63,7 +63,7 @@ INSTALLED_APPS = [
 ]```
 
 
-# *Membuat model pada aplikasi main dengan nama Item dan memiliki atribut wajib*
+## **Membuat model pada aplikasi main dengan nama Item dan memiliki atribut wajib**
 1. Buka berkas models.py pada direktori aplikasi main
 2. Isi berkas models.py dengan class Item dengan atribut yang diinginkan, contohnya:
 ```python
@@ -80,7 +80,7 @@ class Item(models.Model):
 * `price` sebagai harga item tipenya `IntegerField`.
 3. Jalankan perintah `python manage.py makemigrations` dan `python manage.py migrate` untuk melakukan migrasi pada Django.
 
-# *Membuat sebuah fungsi pada views.py untuk dikembalikan ke dalam sebuah template HTML yang menampilkan nama aplikasi serta nama dan kelas kamu*  
+## **Membuat sebuah fungsi pada views.py untuk dikembalikan ke dalam sebuah template HTML yang menampilkan nama aplikasi serta nama dan kelas kamu**  
 1. Buka berkas views.py yang terletak di dalam berkas aplikasi main.
 2. Tambahkan baris impor berikut di bagian paling atas: 'from django.shortcuts import render'
 3. Tambahkan fungsi 'show_main' di bawah impor:
@@ -127,7 +127,7 @@ class Item(models.Model):
 * sintaks `{{...}}` digunakan untuk menampilkan data yang telah diberikan sesuai dictionary di `context`.
 * kode diatas hanya menampilkan nama aplikasi, nama, dan kelas dalam context yang diminta.
 
-# *Membuat sebuah routing pada urls.py aplikasi main untuk memetakan fungsi yang telah dibuat pada views.py*
+## **Membuat sebuah routing pada urls.py aplikasi main untuk memetakan fungsi yang telah dibuat pada views.py**
 
 1.Buatlah berkas urls.py di dalam direktori main
 2. Isi urls.py dengan kode:
@@ -146,7 +146,7 @@ urlpatterns = [
 * pada kode tersebut saya membuat path dari urls.py yang terdapat dalam berkas main ke views.py yang ada pada berkas main
 * kode tersebut akan memetakan fungsi show_main yang terdapat dalam berkas views.py yang sudah dibuat sebelumnya
 
-# *Membuat akun dan *Deploy* di Adaptable.io*
+## **Membuat akun dan *Deploy* di Adaptable.io**
 1. Buat akun [Adaptable.io](https://adaptable.io/) menggunakan akun Github yang digunakan untuk membuat proyek.
 2. Tekan tombol `New App` dan pilih `Connect an Existing Repository`.
 3. Hubungkan Adaptable.io dengan Github dengan memilih `All Repository` pada saat instalasi dan pilih repositori proyekyang dibuat sebagai basisnya. Pilih *branch* yang ingin dijadikan *deployment branch*
@@ -156,10 +156,10 @@ urlpatterns = [
 7. Masukkan nama aplikasi yang akan jadi nama *domain* situs webmu.
 8. Centang bagian `HTTP Listener on PORT` dan klik `Deploy App` untuk memulai *Deployment* aplikasi.
 
-# *Membuat dan mengunggah proyek ke Github*
+## **Membuat dan mengunggah proyek ke Github**
 1. Di dalam direktori yang sudah dibuat, buka *command prompt* (Windows) atau *terminal shell* (Unix). Lalu inisiasi repositori baru dengan perintah `git init`.
 2. Lakukan konfigurasi *username* dengan perintah `git config user.name "<NAME>"` dan *email* dengan perintah `git config user.email "<EMAIL>"` yang akan dihubungkan dengan proyekmu ke repositori Git. (*username* dan *email* disesuaikan dengan Github mu). Lalu pastikan informasi itu sudah berubah dengan menjalankan perintah `git config --list --local`.
-3. Buka akun [Github](https://github.com/) yang akan digunakan, dan buat repositori baru dengan nama yang diinginkan (Contoh yang saya gunakan adalah `goodang_project`). Atur visibilitas menjadi *Public* dan biarkan yang lainnya sesuai *default* nya.
+3. Buka akun [Github](https://github.com/) yang akan digunakan, dan buat repositori baru dengan nama yang diinginkan. Atur visibilitas menjadi *Public* dan biarkan yang lainnya sesuai *default* nya.
 4. Pilih direktori lokal yang sudah diinisiasi Git, di terminal atau *command prompt* jalankan perintah `git branch -M main` untuk membuat branch utama dengan nama "main".
 5. Jalankan perintah `git remote add origin <URL_REPO>` untuk menghubungkan direktori lokal dengan repositori di Github. (Gannti URL_REPO dengan URL HTTPS di direktori Github yang sudah dibuat).
 6. Buat berkas `.gitignore` di direktori lokal dan diisi dengan teks berikut. (Berkas ini berfungsi untuk mengabaikan beberapa berkas oleh Git)
@@ -305,6 +305,7 @@ GitHub.sublime-settings
 7. Untuk melakukan penyimpanan pembaruan dapat melakukan `add`, `commit`, dan `push` dari terminal atau *command prompt* yang dibuka dari direktori lokal.
 
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
+   
 ## **Bagan *request* dan *response client* dengan Django**
 ![bagan](https://cdn.discordapp.com/attachments/1037716635227799613/1151366728345993226/image0.jpg)
 **Penjelasan**
@@ -315,13 +316,13 @@ GitHub.sublime-settings
 * *Template* disini berfungsi untuk mengatur tampilan halaman web yang akan dikembalikan ke *user*
 * Kemudian setelah *logic handle* pada views.py selesai maka akan menampilkan tampilan yang sesuai ke user berupa HTTP response
 
-## **Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?**
+## **3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?**
 
 Virtual environment adalah lingkungan yang terisolasi yang digunakan oleh pengembang perangkat lunak untuk mengelola dependensi dan paket yang dibutuhkan oleh proyek mereka. Kita menggunakan *virtual environment* untuk mengisolasi lingkungan kerja kita dari lingkungan kerja lainnya. Dengan virtual environment, kita dapat menginstal versi Python dan modul yang berbeda untuk setiap proyek yang kita kerjakan. Hal ini dapat mencegah terjadinya konflik antar proyek, karena masing-masing proyek memiliki lingkungannya sendiri.
 
 Tanpa menggunakan *virtual environment* sebetulnya kita tetap bisa membuat aplikasi web berbasis Django. Namun hal ini tidak disarankan karena dapat menyebabkan bentroknya package serta dependencies yang berbeda versi dengan yang sudah ada di perangkat kita. Selain itu, dalam berbagi proyek dengan orang lain menjadi lebih sulit karena mereka mungkin memiliki versi Django atau paket lain yang berbeda di sistem mereka. Maka dari itu, disarankan untuk mengaktifkan virtual environment untuk menghindari hal-hal tersebut dan membuat pengembangan web berbasis Django lebih efektif.
 
-## **Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya**
+## **4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya**
 MVC(Model—View—Controller), MVT(Model View Template), dan MVVM(Model — View — ViewModel ) adalah tiga pola desain perangkat lunak yang digunakan dalam pengembangan aplikasi untuk memisahkan komponen aplikasi dan meningkatkan pemahaman, pemeliharaan, serta skalabilitas kode.
 
 1. MVC (Model-View-Controller):
@@ -346,9 +347,9 @@ Perbedaan: MVVM adalah pola desain yang umumnya digunakan dalam pengembangan apl
 
 Perbedaan utama ketiganya:
 
-MVC adalah pola desain umum yang memisahkan Model, View, dan Controller.
-MVT adalah variasi MVC yang digunakan dalam Django, dengan View yang mengambil peran Controller dan Template yang mengambil peran View.
-MVVM adalah pola desain yang digunakan dalam pengembangan antarmuka pengguna modern, dengan ViewModel yang menghubungkan antara Model dan View.
+*MVC adalah pola desain umum yang memisahkan Model, View, dan Controller.
+*MVT adalah variasi MVC yang digunakan dalam Django, dengan View yang mengambil peran Controller dan Template yang mengambil peran View.
+*MVVM adalah pola desain yang digunakan dalam pengembangan antarmuka pengguna modern, dengan ViewModel yang menghubungkan antara Model dan View.
 
 
 
