@@ -1,0 +1,26 @@
+.tugas h1{
+    padding-top: 110px;
+    font-family: Cambria;
+    text-align: center;
+}
+
+.tugas{
+    background-color: rgb(222, 213, 206);
+}
+
+.profil {
+ padding-top: 50px;
+ padding-bottom: 10px;
+ padding-left: 100px;       
+}
+
+.table-container {
+    padding-top:50px;
+    max-width: 1000px; /* Set the maximum width of the container */
+    margin: 0 auto;  /* Center the container horizontally */
+}
+
+.table{
+    width: 100%;
+    background-color: rgb(73, 55, 31);
+}

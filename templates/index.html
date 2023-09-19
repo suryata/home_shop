@@ -1,15 +1,44 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html>
 <head>
     <title>Index</title>
+    {%include "snippets/styles.html"%}
 </head>
 <body>
-    <h1>Selamat Datang di Home Shop</h1>
-    <h2>The best Shop in town</h2>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, laboriosam vel illum odio a deleniti, mollitia temporibus ducimus quo ab excepturi repudiandae iure sit quis ad ipsam quasi dignissimos dolore.</p>
-    <ul>
-        <li><a href="/" title="">home</a></li>
-        <li><a href="/main/" title="">main</a></li>
-    </ul> 
+  {%include "snippets/navbar.html"%}
+  <div style="padding-top: 150px;">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container text-brown text-center">
+        <h1 class="display-4" style="padding-top: 40px;">Welcome to Home Shop</h1>
+        <p class="lead">Shop your Home Needs</p>
+      </div>
+    </div>
+ </div>
+
+  <div class="services">
+    <h4>ABOUT</h4>
+    <h4>SERVICES</h4>
+    <h4>MAIN</h4>
+  </div>
+
+  <div class="gambar">
+    <img src="{% static 'img/bg.jpeg' %}" alt="">
+    <img src="{% static 'img/gb1.jpeg' %}" alt="">
+    <img src="{% static 'img/bg2.jpeg' %}" alt="">
+  </div>
+
+  <br>
+  <br>
+  <br>
+ 
+      <!--  <div class="container-fluid">
+        <div class="container bg-white text-dark shadow" style="margin-top: -100px;">
+            <div class="row" style="height:400px">
+              <h1>content 1</h1>
+            </div>
+        </div>           -->
+{%include "snippets/scripts.html"%}
 </body>
 </html> 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>{{app_name}}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+    {%include "snippets/navbar.html"%}
+    <div class="tugas">
+        <h1>{{app_name}}'s Main</h1>
+    </div>
+    <div class="profil">
+        <h5>App Name:</h5>
+        <p>{{app_name}}</p>
+        <h5>Name: </h5>
+        <p>{{ name }}<p>
+        <h5>Class: </h5>
+        <p>{{ class }}<p>
+    </div>
+    {%include "snippets/scripts.html"%}
+</body>
+</html> 
+
+

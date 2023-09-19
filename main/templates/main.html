@@ -1,19 +1,68 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
 <html>
 <head>
+    {% block meta %}
     <title>{{app_name}}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}">
+    {% endblock meta %}
 </head>
 <body>
-    <h1>Selamat Datang di {{app_name}}</h1>
-    <h2>The best Shop in town</h2>
-    <h5>App Name:</h5>
-    <p>{{app_name}}</p>
-    <h5>Name: </h5>
-    <p>{{ name }}<p>
-    <h5>Class: </h5>
-    <p>{{ class }}<p>
-    <ul>
-        <li><a href="/" title="">home</a></li>
-        <li><a href="/main/" title="">main</a></li>
-    </ul> 
+    {% block content %}
+    {%include "snippets/navbar.html"%}
+    <div class="tugas">
+        <h1>{{app_name}}'s Item</h1>
+    </div>
+    <div class="profil">
+        <h5>App Name:</h5>
+        <p>{{app_name}}</p>
+        <h5>Name: </h5>
+        <p>{{ name }}<p>
+        <h5>Class: </h5>
+        <p>{{ class }}<p>
+    </div>
+    
+    <div class="table-container"> 
+        <h5>Kamu menyimpan {{total_item}} item pada aplikasi ini.</h5>   
+        <table class="table table-bordered">
+            <thead class="table-secondary">
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Date Added</th>
+                </tr>
+            </thead>
+
+            {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+
+            {% for Item in products %}
+                <tr>
+                    <td>{{Item.name}}</td>
+                    <td>{{Item.price}}</td>
+                    <td>{{Item.description}}</td>
+                    <td>{{Item.amount}}</td>
+                    <td>{{Item.date_added}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <a href="{% url 'main:create_product' %}">
+            <button>
+                Add New Product
+            </button>
+        </a>
+    </div>
+
+    <br />
+
+
+
+    {%include "snippets/scripts.html"%}
+    {% endblock content %}
 </body>
 </html> 
+
