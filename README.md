@@ -50,7 +50,7 @@ JSON (JavaScript Object Notation) sering digunakan dalam pertukaran data antara 
   
 ## **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)**
 - [x] Membuat input `form` untuk menambahkan objek model pada app sebelumnya.
-      + Pada direktori `main` buat berkas baru `forms.py`. Lalu isilah dengan kode dibawah ini
++ Pada direktori `main` buat berkas baru `forms.py`. Lalu isilah dengan kode dibawah ini
 ```python
 from django.forms import ModelForm
 from main.models import Item
@@ -160,6 +160,89 @@ path('create-product', create_product, name='create_product'),
     </div>
   ```
 ## **Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID**
+__Fungsi `views` untuk formal HTML__
++ Lalu pada `views.py` lengkapi fungsi `show_main` untuk melihat dalam format HTML dengan menambahkan beberapa kode menjadi seperti dibawah ini 
+```python
+def show_main(request):
+    products = Item.objects.all()
+    total_item = 0
+    for i in products:
+        total_item += 1
+    context = {
+        'app_name':'Home Shop',
+        'name': 'I Made Surya Anahata Putra',
+        'class': 'PBP A',
+        'products': products,
+        'total_item': total_item
+    }
+
+    return render(request, "main.html", context)
+```
+
+__Fungsi `views` untuk format XML__
++ Buka `views.py` pada direktori `main` dan tambahkan import `HttpResponse` dan `Serializer`.
+```
+from django.http import HttpResponse
+from django.core import serializers
+```
++ Buat fungsi `show_xml` yang menerima parameter request dan buat sebuah variable untuk menyimpan hasil query dari seluruh data yang ada pada Items serta tambahkan return function berupa `HttpResponse` yang berisi parameter data hasil `query` yang sudah diserialisasi menjadi format XML dan parameter `content_type="application/xml"`.
+```
+def show_xml(request):
+    data = Product.objects.all()
+    return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
+```
++ Buka `urls.py` yang ada pada folder main dan import fungsi yang sudah dibuat
+```
+from main.views import show_main, create_product, show_xml 
+```
++ Tambahkan path url ke dalam urlpatterns untuk mengakses fungsi yang sudah diimpor tadi
+  ```
+    ...
+    path('xml/', show_xml, name='show_xml'), 
+    ...
+  ```
+__Fungsi `views` untuk format JSON__
++ Pada berkas `views.py` pada direktori `main`, buat fungsi `show_json` yang menerima parameter request dan buat sebuah variable untuk menyimpan hasil query dari seluruh data yang ada pada Items serta tambahkan return function berupa `HttpResponse` yang berisi parameter data hasil `query` yang sudah diserialisasi menjadi format JSON dan parameter `content_type="application/json"`.
+```
+def show_json(request):
+    data = Product.objects.all()
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+```
++ Buka `urls.py` yang ada pada folder main dan import fungsi yang sudah dibuat
+```
+from main.views import show_main, create_product, show_xml, show_json
+```
++ Tambahkan path url ke dalam urlpatterns untuk mengakses fungsi yang sudah diimpor tadi
+  ```
+    ...
+    path('json/', show_json, name='show_json'),  
+    ...
+  ```
+__Fungsi `views` untuk format XML by ID dan JSON by ID__
++ Buka berkas `views.py` pada direktori `main` dan buatlah fungsi baru yang menerima parameter request dan id dengan nama `show_xml_by_id` dan `show_json_by_id`. Lalu buat sebuah variable untuk menyimpan hasil query dari seluruh data yang ada pada Items. Tambahkan return function berupa `HttpResponse` yang berisi parameter data hasil query yang sudah diserialisasi menjadi JSON atau XML dan parameter `content_type` dengan value `"application/xml"` (untuk format XML) atau `"application/json"` (untuk format JSON).
++ XML
+```
+def show_xml_by_id(request, id):
+    data = Product.objects.filter(pk=id)
+    return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
+```
++ JSON
+```
+def show_json_by_id(request, id):
+    data = Product.objects.filter(pk=id)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+```
++ Buka `urls.py` yang ada pada folder main dan import fungsi yang sudah dibuat
+```
+from main.views import show_main, create_product, show_xml, show_json, show_xml_by_id, show_json_by_id 
+```
++ Tambahkan path url ke dalam urlpatterns untuk mengakses fungsi yang sudah diimpor tadi
+  ```
+    ...
+    path('xml/<int:id>/', show_xml_by_id, name='show_xml_by_id'),
+    path('json/<int:id>/', show_json_by_id, name='show_json_by_id'),  
+    ...
+  ```
 ## **Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2**
 ## **Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md**
 ## **Melakukan add-commit-push ke GitHub**
