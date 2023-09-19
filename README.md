@@ -49,17 +49,16 @@ JSON (JavaScript Object Notation) sering digunakan dalam pertukaran data antara 
   Hal ini karena JSON dapat menyimpan beragam struktur data seperti objek, array, string, dan tipe data lainnya yang sering dipakai.
   
 ## **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)**
-- [x] Membuat input `form` untuk menambahkan objek model pada app sebelumnya.
-<br>
+- [x] Membuat input `form` untuk menambahkan objek model pada app sebelumnya.<br>
 + Pada direktori `main` buat berkas baru `forms.py`. Lalu isilah dengan kode dibawah ini
-```python
-from django.forms import ModelForm
-from main.models import Item
-
-class ItemForm(ModelForm):
-    class Meta:
-        model = Item
-        fields = ["name", "price", "description","amount"]
+```
+  from django.forms import ModelForm
+  from main.models import Item
+  
+  class ItemForm(ModelForm):
+      class Meta:
+          model = Item
+          fields = ["name", "price", "description","amount"]
 ```
 + Buka berkas `views.py` pada direktori `main` dan tambahkan beberapa import
 ```
@@ -162,7 +161,7 @@ path('create-product', create_product, name='create_product'),
   ```
 - [x] Tambahkan 5 fungsi `views` untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID. <br>
 __Fungsi `views` untuk formal HTML__
-+ Lalu pada `views.py` lengkapi fungsi `show_main` untuk melihat dalam format HTML dengan menambahkan beberapa kode menjadi seperti dibawah ini 
++ Pada`views.py` lengkapi fungsi `show_main` untuk melihat dalam format HTML dengan menambahkan beberapa kode menjadi seperti dibawah ini 
 ```python
 def show_main(request):
     products = Item.objects.all()
