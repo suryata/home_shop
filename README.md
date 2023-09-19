@@ -50,6 +50,7 @@ JSON (JavaScript Object Notation) sering digunakan dalam pertukaran data antara 
   
 ## **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)**
 - [x] Membuat input `form` untuk menambahkan objek model pada app sebelumnya.
+<br>
 + Pada direktori `main` buat berkas baru `forms.py`. Lalu isilah dengan kode dibawah ini
 ```python
 from django.forms import ModelForm
@@ -159,7 +160,7 @@ path('create-product', create_product, name='create_product'),
         </a>
     </div>
   ```
-## **Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID**
+- [x] Tambahkan 5 fungsi `views` untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID. <br>
 __Fungsi `views` untuk formal HTML__
 + Lalu pada `views.py` lengkapi fungsi `show_main` untuk melihat dalam format HTML dengan menambahkan beberapa kode menjadi seperti dibawah ini 
 ```python
@@ -243,8 +244,33 @@ from main.views import show_main, create_product, show_xml, show_json, show_xml_
     path('json/<int:id>/', show_json_by_id, name='show_json_by_id'),  
     ...
   ```
-## **Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2**
+- [x] Membuat routing URL untuk masing-masing `views` yang telah ditambahkan pada poin 2. <br>
++ Buka berkas `urls.py` pada direktori `main` dan import fungsi yang sudah dibuat
+```
+from main.views import show_main, create_product, show_xml, show_json, show_xml_by_id, show_json_by_id 
+```
++ Tambahkan beberapa path url ke dalam `urlpatterns` untuk mengakses fungsi yang sudah diimport
+
+```
+    path('xml/', show_xml, name='show_xml'),
+    path('json/', show_json, name='show_json'),
+    path('xml/<int:id>/', show_xml_by_id, name='show_xml_by_id'),
+    path('json/<int:id>/', show_json_by_id, name='show_json_by_id'),
+```
+
+
 ## **Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md**
+__Dokumentasi Akses URL HTML__
+![HTML](https://cdn.discordapp.com/attachments/1037716635227799613/1153736811974230157/image.png)
+![HTML](https://cdn.discordapp.com/attachments/1037716635227799613/1153737564050686043/image.png)
+__Dokumentasi Akses URL XML__
+![XML](https://cdn.discordapp.com/attachments/1037716635227799613/1153736121600184340/image.png)
+__Dokumentasi Akses URL JSON__
+![JSON](https://cdn.discordapp.com/attachments/1037716635227799613/1153736060313022504/image.png)
+__Dokumentasi Akses URL XML by ID__
+![XML by ID](https://cdn.discordapp.com/attachments/1037716635227799613/1153736323606253730/image.png)
+__Dokumentasi Akses URL JSON by ID__
+![JSON by ID](https://cdn.discordapp.com/attachments/1037716635227799613/1153736401720967299/image.png)
 ## **Melakukan add-commit-push ke GitHub**
 
 # **Tugas 2 - Pemrograman Berbasis Platform**
