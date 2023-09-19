@@ -1,3 +1,30 @@
+# **Tugas 3 - Pemrograman Berbasis Platform**
+
+**I Made Surya Anahata Putra**<br/>
+**2206081370**<br/>
+**PBP A**<br/>
+## **Apa perbedaan antara form POST dan form GET dalam Django?**
+Form POST dan form GET dalam Django adalah dua metode yang berbeda yang digunakan untuk mengirim data dari formulir HTML ke server, dan mereka memiliki perbedaan signifikan dari berbagai sudut pandang.
+
++Form POST digunakan ketika data yang dikirimkan dari formulir harus diproses oleh server. Metode ini memiliki tujuan utama untuk mengirim data kepada server agar dapat diolah lebih lanjut. Ini adalah pilihan yang paling umum digunakan ketika kita ingin menyimpan, memperbarui, atau melakukan tindakan tertentu berdasarkan data yang diberikan oleh pengguna. Data yang dikirim melalui form POST tidak terlihat dalam URL, sehingga menjadikannya pilihan yang lebih aman untuk mengirim data sensitif, seperti kata sandi atau informasi pribadi. Data dalam form POST disampaikan dalam tubuh permintaan HTTP.
+
++Sebaliknya, form GET digunakan ketika kita ingin mengambil data dari server tanpa mempengaruhi status atau data di server. Tujuan utamanya adalah untuk mengirim permintaan dengan parameter-parameter yang disertakan dalam URL untuk mendapatkan hasil atau informasi yang relevan dari server. Form GET sering digunakan untuk pencarian atau tindakan baca, di mana data yang dikirim dengan form GET muncul dalam query string URL. Ini membuat data terlihat dalam URL dan dapat diakses oleh pengguna atau pihak ketiga yang melihat URL. Oleh karena itu, form GET tidak cocok untuk mengirim data sensitif.
+
++Selain itu, perbedaan lain antara keduanya adalah dalam hal batasan panjang data. Form POST tidak memiliki batasan panjang data yang ketat, sehingga dapat digunakan untuk mengirim data yang lebih besar, sementara form GET memiliki batasan panjang URL yang dapat bervariasi antara browser dan server, yang dapat mengakibatkan masalah jika data terlalu besar.
+
++Terakhir, dari segi caching dan bookmarking, permintaan POST tidak dapat di-cache oleh browser atau server proxy, dan URL tidak dapat dengan mudah dibookmark atau dibagikan oleh pengguna karena data tidak muncul dalam URL. Sementara itu, permintaan GET dapat di-cache oleh browser dan server proxy, yang memungkinkan pengguna untuk menciptakan tautan yang mengakses halaman dengan parameter yang sudah ditentukan.
+
++Pilihan antara form POST dan form GET harus didasarkan pada kebutuhan aplikasi kita. Form POST lebih sesuai untuk pengiriman data sensitif atau data yang mungkin besar, sedangkan form GET lebih cocok untuk permintaan yang bersifat idempoten (tidak mengubah status sumber daya) atau ketika kita ingin data tersedia dalam URL untuk berbagi atau penyimpanan bookmark. 
+
+## **Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?**
+## **Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?**
+## **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)**
+## **Membuat input form untuk menambahkan objek model pada app sebelumnya**
+## **Tambahkan 5 fungsi views untuk melihat objek yang sudah ditambahkan dalam format HTML, XML, JSON, XML by ID, dan JSON by ID**
+## **Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2**
+## **Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md**
+## **Melakukan add-commit-push ke GitHub**
+
 # **Tugas 2 - Pemrograman Berbasis Platform**
 
 **I Made Surya Anahata Putra**<br/>
