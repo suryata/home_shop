@@ -5,14 +5,15 @@
 **PBP A**<br/>
 
 ## **Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?**
-`UserCreationForm` dalam Django adalah sebuah formulir bawaan yang disediakan oleh kerangka kerja Django untuk memudahkan proses pendaftaran pengguna dalam aplikasi web. Form ini telah dirancang khusus untuk mencakup bidang seperti nama pengguna, kata sandi, dan konfirmasi kata sandi. Kelebihan utamanya adalah kemudahannya dalam penggunaan dan integrasinya yang lancar dengan model pengguna bawaan Django. Form ini juga mencakup validasi otomatis untuk memastikan bahwa data yang dimasukkan oleh pengguna sesuai dengan persyaratan yang ditetapkan. Selain itu, penggunaan `UserCreationForm` dapat menghemat waktu pengembangan karena pengembang tidak perlu membuat formulir pendaftaran dari awal. Namun, perlu diperhatikan bahwa dalam beberapa situasi,perlu adanya tampilan atau logika tambahan sesuai dengan kebutuhan khusus aplikasi, karena form ini mungkin memiliki keterbatasan dalam hal kustomisasi dan tampilan yang sangat spesifik.
+`UserCreationForm` dalam Django adalah sebuah formulir bawaan yang disediakan oleh kerangka kerja Django untuk memudahkan proses pendaftaran pengguna dalam aplikasi web. Form ini telah dirancang khusus untuk mencakup bidang seperti nama pengguna, kata sandi, dan konfirmasi kata sandi. Kelebihan utamanya adalah kemudahannya dalam penggunaan dan integrasinya yang lancar dengan model pengguna bawaan Django. Form ini juga mencakup validasi otomatis untuk memastikan bahwa data yang dimasukkan oleh pengguna sesuai dengan persyaratan yang ditetapkan. Selain itu, penggunaan `UserCreationForm` dapat menghemat waktu pengembangan karena pengembang tidak perlu membuat formulir pendaftaran dari awal. Namun, perlu diperhatikan bahwa dalam beberapa situasi, perlu adanya tampilan atau logika tambahan sesuai dengan kebutuhan khusus aplikasi, karena form ini mungkin memiliki keterbatasan dalam hal kustomisasi dan tampilan yang sangat spesifik.
 Kelebihan utama dari `UserCreationForm` adalah:
-+ Kemudahan Penggunaan
++ Kemudahan Penggunaan<br> 
 Form ini sudah tersedia dan siap digunakan dengan konfigurasi standar. Anda dapat menggunakannya dengan mudah tanpa perlu membuat formulir pendaftaran dari awal.
-+ Validasi Terintegrasi
++ Validasi Terintegrasi<br>
 Form ini memiliki validasi bawaan yang membantu memastikan kebenaran data yang dimasukkan oleh pengguna, seperti memastikan kata sandi cocok dengan konfirmasi kata sandi.
-+ Integrasi Model User
-Form ini bekerja dengan model pengguna bawaan Django (User) dengan baik, sehingga ketika data dimasukkan dan disubmit, akun pengguna baru akan dibuat dan disimpan di database secara otomatis.
++ Integrasi Model User<br>
+Form ini bekerja dengan model pengguna bawaan Django (User) dengan baik, sehingga ketika data dimasukkan dan disubmit, akun pengguna baru akan dibuat dan disimpan di database secara otomatis.<br>
+
 ## **Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?**
 ## **Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?**
 ## **Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?**
