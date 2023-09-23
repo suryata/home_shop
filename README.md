@@ -5,7 +5,8 @@
 **PBP A**<br/>
 
 ## **Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?**
-`UserCreationForm` dalam Django adalah sebuah formulir bawaan yang disediakan oleh kerangka kerja Django untuk memudahkan proses pendaftaran pengguna dalam aplikasi web. Form ini telah dirancang khusus untuk mencakup bidang seperti nama pengguna, kata sandi, dan konfirmasi kata sandi. Kelebihan utamanya adalah kemudahannya dalam penggunaan dan integrasinya yang lancar dengan model pengguna bawaan Django. Form ini juga mencakup validasi otomatis untuk memastikan bahwa data yang dimasukkan oleh pengguna sesuai dengan persyaratan yang ditetapkan. Selain itu, penggunaan `UserCreationForm` dapat menghemat waktu pengembangan karena pengembang tidak perlu membuat formulir pendaftaran dari awal. Namun, perlu diperhatikan bahwa dalam beberapa situasi, perlu adanya tampilan atau logika tambahan sesuai dengan kebutuhan khusus aplikasi, karena form ini mungkin memiliki keterbatasan dalam hal kustomisasi dan tampilan yang sangat spesifik.
+`UserCreationForm` dalam Django adalah sebuah formulir bawaan yang disediakan oleh kerangka kerja Django untuk memudahkan proses pendaftaran pengguna dalam aplikasi web. Form ini telah dirancang khusus untuk mencakup bidang seperti nama pengguna, kata sandi, dan konfirmasi kata sandi. Kelebihan utamanya adalah kemudahannya dalam penggunaan dan integrasinya yang lancar dengan model pengguna bawaan Django. Form ini juga mencakup validasi otomatis untuk memastikan bahwa data yang dimasukkan oleh pengguna sesuai dengan persyaratan yang ditetapkan. Selain itu, penggunaan `UserCreationForm` dapat menghemat waktu pengembangan karena pengembang tidak perlu membuat formulir pendaftaran dari awal. Namun, perlu diperhatikan bahwa dalam beberapa situasi, perlu adanya tampilan atau logika tambahan sesuai dengan kebutuhan khusus aplikasi, karena form ini mungkin memiliki keterbatasan dalam hal kustomisasi dan tampilan yang sangat spesifik.<br>
+
 Kelebihan utama dari `UserCreationForm` adalah:
 + Kemudahan Penggunaan<br> 
 Form ini sudah tersedia dan siap digunakan dengan konfigurasi standar. Kita dapat menggunakannya dengan mudah tanpa perlu membuat formulir pendaftaran dari awal.
@@ -13,6 +14,17 @@ Form ini sudah tersedia dan siap digunakan dengan konfigurasi standar. Kita dapa
 Form ini memiliki validasi bawaan yang membantu memastikan kebenaran data yang dimasukkan oleh pengguna, seperti memastikan kata sandi cocok dengan konfirmasi kata sandi.
 + Integrasi Model User<br>
 Form ini bekerja dengan model pengguna bawaan Django (User) dengan baik, sehingga ketika data dimasukkan dan disubmit, akun pengguna baru akan dibuat dan disimpan di database secara otomatis.<br>
+
+Kekurangan dari UserCreationForm:
+
++ Kustomisasi Terbatas<br>
+Meskipun UserCreationForm menyediakan fungsi dasar untuk pendaftaran pengguna, dalam banyak kasus Anda akan perlu menyesuaikan tampilan dan perilaku form untuk memenuhi kebutuhan aplikasi Anda. Ini bisa memerlukan pembuatan form pendaftaran yang lebih kompleks atau penanganan kasus khusus yang tidak dicakup oleh UserCreationForm.
+
++ Tampilan Terbatas<br>
+Form ini hanya menyediakan elemen dasar seperti teks input untuk username dan password. Jika Anda memerlukan form pendaftaran yang lebih kaya dalam hal tampilan seperti pengecekan kekuatan kata sandi atau bidang tambahan seperti nama lengkap atau foto profil, Anda perlu menambahkan kode tambahan.
+
++ Dibutuhkan Integrasi dengan Tampilan dan Logika Tambahan<br>
+Untuk mengimplementasikan pendaftaran pengguna sepenuhnya, Anda perlu mengintegrasikan UserCreationForm dengan tampilan (views) dan logika tambahan seperti penanganan pesan kesalahan, pengiriman email konfirmasi, dan verifikasi CAPTCHA jika diperlukan.
 
 ## **Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?**
 Dalam konteks Django, autentikasi dan otorisasi adalah dua konsep kunci yang berkaitan dengan keamanan pengguna dan akses pada aplikasi web. Perbedaan keduanya yaitu:
