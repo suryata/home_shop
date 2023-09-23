@@ -1,3 +1,22 @@
+# **Tugas 4 - Pemrograman Berbasis Platform**
+
+**I Made Surya Anahata Putra**<br/>
+**2206081370**<br/>
+**PBP A**<br/>
+
+## ** Menjawab beberapa pertanyaan berikut pada README.md pada root folder**
+## **Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?**
+## **Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?**
+## **Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?**
+## **Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?**
+## **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)**
+## **Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar**
+## **Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal**
+## **Menghubungkan model Item dengan User**
+## **Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi**
+## ** Melakukan add-commit-push ke GitHub**
+
+
 # **Tugas 3 - Pemrograman Berbasis Platform**
 
 **I Made Surya Anahata Putra**<br/>
