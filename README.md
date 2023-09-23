@@ -4,7 +4,7 @@
 **2206081370**<br/>
 **PBP A**<br/>
 
-## ** Menjawab beberapa pertanyaan berikut pada README.md pada root folder**
+## **Menjawab beberapa pertanyaan berikut pada README.md pada root folder**
 ## **Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?**
 ## **Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?**
 ## **Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?**
