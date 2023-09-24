@@ -67,6 +67,7 @@ Penggunaan cookies sendiri tidak memiliki masalah keamanan secara inheren, tetap
 
 ## **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)**
 - [x] Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar<br>
+<br>
 _REGISTRASI_
 + Jalankan virtual environment terlebih dahulu.
 + Buka views.py yang ada pada direktori root dan buatlah fungsi dengan nama register yang menerima parameter request.
