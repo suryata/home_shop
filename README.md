@@ -251,11 +251,113 @@ Penggunaan cookies sendiri tidak memiliki masalah keamanan secara inheren, tetap
   path('logout/', logout_user, name='logout'),
   ...
 ```
++ Selanjutnya tambahkan restriksi pada halaman main agar sesuai dengan user yang sedang login. Pertama-tama buka berkas `views.py` yang ada pada direktori `main` dan tambahkan import `login_required` pada bagian atas
+```
+  from django.contrib.auth.decorators import login_required
+```
++ Tambahkan juga kode `@login_required(login_url='/login')` di atas fungsi `show_main`.
+```
+  ...
+  @login_required(login_url='/login')
+  def show_main(request):
+  ...
+```
 
 - [x] Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal<br>
-
++ Pertama buka http://127.0.0.1:8000/ pada browser.
++ Lalu tekan tombol main kemudian tekan tombol `Register Now` untuk membuat 2 akun baru
++ Setelah selesai membuat 2 akun baru lalu, login dengan username dan password sesuai dengan yang sudah dibuat pada form register
++ Lalu tekan tombol `add new product` untuk membuat dummy data, dan buatlah masing-masing 3 dummy data per akun.
++ Dua akun pengguna dengan masing-masing 3 dummy data berhasil dibuat!
+  
 - [x] Menghubungkan model Item dengan User<br>
+  + Buka berkas `models.py` pada direktori `main` dan tambahkan kode berikut.
+  ```
+    ...
+    from django.contrib.auth.models import User
+    ...
+  ```
++ Tambahkan juga pada model `Item` yang sudah dibuat potongan kode berikut.
+```
+    class Product(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    ...
+```
++ Buka `views.py` pada direktori `main` dan ubah potongan kode pada `create_product` menjadi seperti dibawah ini.
+```
+  def create_product(request):
+   form = ProductForm(request.POST or None)
+  
+   if form.is_valid() and request.method == "POST":
+       product = form.save(commit=False)
+       product.user = request.user
+       product.save()
+       return HttpResponseRedirect(reverse('main:show_main'))
+   ...
+```
++ Pada fungsi `show_main` juga ubah menjadi seperti berikut.
+```
+  def show_main(request):
+      products = Product.objects.filter(user=request.user)
+  
+      context = {
+          ...
+          'name': request.user.username,
+      ...
+      }
+```
++ Simpan semua perubahan dengan melakukan `python manage.py makemigrations`.
++ Seharusnya akan muncul error saat melakukan migrasi model. Pilih 1 untuk menetapkan default value untuk field user pada semua row yang telah dibuat pada basis data.
++ Ketik angka 1 kembali untuk menetapkan dengan user ID 1
++ Lakukan `python manage.py migrate` kembali untuk mengaplikasikan yang dilakukan pada sebelumnya
+<br>
+
 - [x] Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi<br>
+
++ Untuk menampilkan username nama yang sedang logged in sudah terdapat pada step sebelumnya yaitu saat tahap mengganti context di dalam `show_main` yaitu  
+```
+'name': request.user.username,
+```
++ Untuk menerapkan cookies seperti last login, pertama-tama kita harus menghubungan data dari cookies terlebih dahulu. Buka berkas `views.py` pada direktori `main` dan tambahkan beberapa import dibawah ini.
+```
+import datetime
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+```
++ Pada fungsi `login_user`, tambahkan fungsi untuk menambahkan cookie yang bernama `last_login` untuk melihat kapan kali suatu user melakukan login. Caranya adalah dengan mengganti kode yang ada pada blok `if user is not None` menjadi potongan kode dibawah ini.
+```
+...
+if user is not None:
+    login(request, user)
+    response = HttpResponseRedirect(reverse("main:show_main")) 
+    response.set_cookie('last_login', str(datetime.datetime.now()))
+    return response
+...
+```
++ Pada fungsi `show_main` tambahkan potongan kode `last_login': request.COOKIES['last_login']` ke dalam variable context.
+```
+context = {
+    ...
+    'last_login': request.COOKIES['last_login'],
+    ...
+}
+```
++ Ubah fungsi `logout_user` menjadi potongan berikut.
+```
+def logout_user(request):
+    logout(request)
+    response = HttpResponseRedirect(reverse('main:login'))
+    response.delete_cookie('last_login')
+    return response
+```
++ Buka berkas `main.html` dan tambahkan potongan kode berikut di bawah tombol logout.
+```
+...
+<h5>Sesi terakhir login: {{ last_login }}</h5>
+...
+```
++ Refresh halaman login (atau jalankan proyek Django dengan perintah python manage.py runserver) dan cobalah untuk login. Data last login akan muncul di halaman main.
+  
 ## ** Melakukan add-commit-push ke GitHub**
 
 
