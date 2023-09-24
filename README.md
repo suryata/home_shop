@@ -67,7 +67,7 @@ Penggunaan cookies sendiri tidak memiliki masalah keamanan secara inheren, tetap
 
 ## **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)**
 - [x] Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar<br>
-- [x] Mengimplementasikan fungsi dan form registrasi<br>
+_REGISTRASI_
 + Jalankan virtual environment terlebih dahulu.
 + Buka views.py yang ada pada direktori root dan buatlah fungsi dengan nama register yang menerima parameter request.
 + Tambahkan import redirect, UserCreationForm, dan messages pada bagian paling atas.
@@ -139,7 +139,7 @@ Penggunaan cookies sendiri tidak memiliki masalah keamanan secara inheren, tetap
     ...
   ```
 
-- [x] Mengimplementasikan fungsi login
+_LOGIN_
 + Jalankan virtual environment terlebih dahulu.
 + Buka views.py yang ada pada direktori root dan buatlah fungsi dengan nama login_user yang menerima parameter request.
 + Tambahkan import authenticate dan login pada bagian paling atas.
@@ -221,7 +221,7 @@ Penggunaan cookies sendiri tidak memiliki masalah keamanan secara inheren, tetap
       path('login/', login_user, name='login'),
     ...
   ```
-- [x] Mengimplementasikan fungsi logout
+_LOGOUT_
 + Buka views.py yang ada pada subdirektori main dan buatlah fungsi dengan nama logout_user yang menerima parameter request
 + Tambahkan import logout pada bagian paling atas.
 ```from django.contrib.auth import logout```
