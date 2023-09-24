@@ -24,10 +24,6 @@ p{
 }
 
 .services{
-    color: rgb(137, 88, 53);
-    letter-spacing: 5px;
-    font-family: sans-serif;  
-    font-size: 15px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -37,9 +33,18 @@ p{
     
 }
 
-.services h4 {
-    margin-left: 145px;
-    margin-right: 145px;
+.services a {
+    color: rgb(137, 88, 53);
+    letter-spacing: 5px;
+    font-family: sans-serif;  
+    font-size: 23px;
+    margin-left: 160px;
+    margin-right: 140px;
+    text-decoration: none;
+}
+
+.services .link:nth-child(2) {
+    margin-left: 200px;
 }
 
 .gambar{
