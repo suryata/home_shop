@@ -78,62 +78,65 @@ Penggunaan cookies sendiri tidak memiliki masalah keamanan secara inheren, tetap
   ```
 + Tambahkan potongan kode di bawah ini ke dalam fungsi register yang sudah dibuat sebelumnya.
   ```
-def register(request):
-    form = UserCreationForm()
-
-    if request.method == "POST":
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Your account has been successfully created!')
-            return redirect('login')
-    context = {'form':form}
-    return render(request, 'register.html', context)
+  def register(request):
+      form = UserCreationForm()
+  
+      if request.method == "POST":
+          form = UserCreationForm(request.POST)
+          if form.is_valid():
+              form.save()
+              messages.success(request, 'Your account has been successfully created!')
+              return redirect('login')
+      context = {'form':form}
+      return render(request, 'register.html', context)
   ```
 + Buatlah berkas HTML baru dengan nama register.html pada folder root templates. Isi dari register.html dapat diisi dengan template berikut:
   ```
-    {% extends 'base.html' %}
-  
-  {% block meta %}
-      <title>Register</title>
-  {% endblock meta %}
-  
-  {% block content %}  
-  
-  <div class = "login">
+      {% extends 'base.html' %}
       
-      <h1>Register</h1>  
-  
-          <form method="POST" >  
-              {% csrf_token %}  
-              <table>  
-                  {{ form.as_table }}  
-                  <tr>  
-                      <td></td>
-                      <td><input type="submit" name="submit" value="Daftar"/></td>  
-                  </tr>  
-              </table>  
-          </form>
-  
-      {% if messages %}  
-          <ul>   
-              {% for message in messages %}  
-                  <li>{{ message }}</li>  
-                  {% endfor %}  
-          </ul>   
-      {% endif %}
-  
-  </div>  
-  
-  {% endblock content %}
+      {% block meta %}
+          <title>Register</title>
+      {% endblock meta %}
+      
+      {% block content %}  
+      
+      <div class = "login">
+          
+          <h1>Register</h1>  
+      
+              <form method="POST" >  
+                  {% csrf_token %}  
+                  <table>  
+                      {{ form.as_table }}  
+                      <tr>  
+                          <td></td>
+                          <td><input type="submit" name="submit" value="Daftar"/></td>  
+                      </tr>  
+                  </table>  
+              </form>
+      
+          {% if messages %}  
+              <ul>   
+                  {% for message in messages %}  
+                      <li>{{ message }}</li>  
+                      {% endfor %}  
+              </ul>   
+          {% endif %}
+      
+      </div>  
+      
+      {% endblock content %}
   ```
 + Buka urls.py yang ada pada subdirektori root dan impor fungsi yang sudah dibuat tadi.
-  ```from main.views import register```
+  ```
+    from main.views import register
+  ```
+  
 + Tambahkan path url ke dalam urlpatterns untuk mengakses fungsi yang sudah diimpor tadi.
   ```
-  ...
-    path('register/', register, name='register'),
-  ...
+    ...
+      path('register/', register, name='register'),
+    ...
   ```
 
 - [x] Mengimplementasikan fungsi login
@@ -141,7 +144,7 @@ def register(request):
 + Buka views.py yang ada pada direktori root dan buatlah fungsi dengan nama login_user yang menerima parameter request.
 + Tambahkan import authenticate dan login pada bagian paling atas.
   ```
-  from django.contrib.auth import authenticate, login 
+    from django.contrib.auth import authenticate, login 
   ```
 + Tambahkan potongan kode di bawah ini ke dalam fungsi login yang sudah dibuat sebelumnya. Potongan kode ini berfungsi untuk mengautentikasi pengguna yang ingin login.
   ```
@@ -162,59 +165,61 @@ def register(request):
   ```
 + Buatlah berkas HTML baru dengan nama login.html pada folder root templates. Isi dari login.html dapat diisi dengan template berikut.
   ```
-  {% extends 'base.html' %}
-  
-  {% block meta %}
-      <title>Login</title>
-  {% endblock meta %}
-  
-  {% block content %}
-  
-  <div class = "login">
-  
-      <h1>Login</h1>
-  
-      <form method="POST" action="">
-          {% csrf_token %}
-          <table>
-              <tr>
-                  <td>Username: </td>
-                  <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-              </tr>
-                      
-              <tr>
-                  <td>Password: </td>
-                  <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-              </tr>
-  
-              <tr>
-                  <td></td>
-                  <td><input class="btn login_btn" type="submit" value="Login"></td>
-              </tr>
-          </table>
-      </form>
-  
-      {% if messages %}
-          <ul>
-              {% for message in messages %}
-                  <li>{{ message }}</li>
-              {% endfor %}
-          </ul>
-      {% endif %}     
-          
-      Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
-  
-  </div>
-  
-  {% endblock content %}
+    {% extends 'base.html' %}
+    
+    {% block meta %}
+        <title>Login</title>
+    {% endblock meta %}
+    
+    {% block content %}
+    
+    <div class = "login">
+    
+        <h1>Login</h1>
+    
+        <form method="POST" action="">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Username: </td>
+                    <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+                </tr>
+                        
+                <tr>
+                    <td>Password: </td>
+                    <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
+                </tr>
+    
+                <tr>
+                    <td></td>
+                    <td><input class="btn login_btn" type="submit" value="Login"></td>
+                </tr>
+            </table>
+        </form>
+    
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}     
+            
+        Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
+    
+    </div>
+    
+    {% endblock content %}
   ```
 + Buka urls.py yang ada pada subdirektori root dan impor fungsi yang sudah dibuat tadi.
-  ```from main.views import login_user```
+  ```
+    from main.views import login_user
+  ```
 + Tambahkan path url ke dalam urlpatterns untuk mengakses fungsi yang sudah diimpor tadi.
   ```
-  ...
-    path('login/', login_user, name='login'),
-  ...
+    ...
+      path('login/', login_user, name='login'),
+    ...
   ```
 - [x] Mengimplementasikan fungsi logout
 + Buka views.py yang ada pada subdirektori main dan buatlah fungsi dengan nama logout_user yang menerima parameter request
@@ -237,12 +242,14 @@ def register(request):
     ...
   ```
 + Buka urls.py yang ada pada subdirektori main dan impor fungsi yang sudah dibuat tadi.
-  ```from main.views import logout_user```
+  ```
+  from main.views import logout_user
+  ```
 + Tambahkan path url ke dalam urlpatterns untuk mengakses fungsi yang sudah diimpor tadi.
 ```
-...
-path('logout/', logout_user, name='logout'),
-...
+  ...
+  path('logout/', logout_user, name='logout'),
+  ...
 ```
 
 - [x] Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal<br>
