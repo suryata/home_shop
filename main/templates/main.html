@@ -34,6 +34,9 @@
                     <th>Description</th>
                     <th>Amount</th>
                     <th>Date Added</th>
+                    <th>Tambah</th>
+                    <th>Kurang</th>
+                    <th>Hapus</th>
                 </tr>
             </thead>
 
@@ -46,6 +49,25 @@
                     <td>{{Item.description}}</td>
                     <td>{{Item.amount}}</td>
                     <td>{{Item.date_added}}</td>
+
+                    <td>
+                        <form method="post" action="{% url 'main:tambah_amount' Item.id %}">
+                            {% csrf_token %}
+                            <button type="submit">+</button>
+                        </form>
+                    </td>
+                    <td> 
+                        <form method="post" action="{% url 'main:kurang_amount' Item.id %}">
+                            {% csrf_token %}
+                            <button type="submit">-</button>
+                        </form>
+                    </td>
+                    <td> 
+                        <form method="post" action="{% url 'main:hapus_item' Item.id %}">
+                            {% csrf_token %}
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
         </table>
