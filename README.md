@@ -5,99 +5,99 @@
 **PBP A**<br/>
 
 ## **Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya**
-Berikut adalah ringkasan manfaat dan waktu yang tepat untuk menggunakan setiap jenis element selector dalam CSS:
+Berikut adalah manfaat dan waktu yang tepat untuk menggunakan setiap jenis element selector dalam CSS:<br>
 
-+ Type Selector (Tag Selector):
-Manfaat: Mengaplikasikan gaya ke semua elemen dengan nama tag tertentu.
-Waktu yang Tepat: Ketika ingin memberikan gaya umum ke semua elemen dengan tag yang sama.
++ Type Selector (Tag Selector):<br>
+Manfaat: Mengaplikasikan gaya ke semua elemen dengan nama tag tertentu.<br>
+Waktu yang Tepat: Ketika ingin memberikan gaya umum ke semua elemen dengan tag yang sama.<br>
 
-+ ID Selector:
-Manfaat: Mengaplikasikan gaya ke elemen dengan ID tertentu.
-Waktu yang Tepat: Ketika perlu memberikan gaya khusus ke elemen unik dengan ID tertentu.
++ ID Selector:<br>
+Manfaat: Mengaplikasikan gaya ke elemen dengan ID tertentu.<br>
+Waktu yang Tepat: Ketika perlu memberikan gaya khusus ke elemen unik dengan ID tertentu.<br>
 
-+ Class Selector:
-Manfaat: Mengaplikasikan gaya ke semua elemen dengan class tertentu.
-Waktu yang Tepat: Ketika ingin memberikan gaya khusus ke grup elemen dengan class yang sama.
++ Class Selector:<br>
+Manfaat: Mengaplikasikan gaya ke semua elemen dengan class tertentu.<br>
+Waktu yang Tepat: Ketika ingin memberikan gaya khusus ke grup elemen dengan class yang sama.<br>
 
-+ Attribute Selector:
-Manfaat: Mengaplikasikan gaya ke elemen berdasarkan atribut dan nilai atributnya.
-Waktu yang Tepat: Ketika ingin memberikan gaya ke elemen dengan atribut tertentu.
++ Attribute Selector:<br>
+Manfaat: Mengaplikasikan gaya ke elemen berdasarkan atribut dan nilai atributnya.<br>
+Waktu yang Tepat: Ketika ingin memberikan gaya ke elemen dengan atribut tertentu.<br>
 
-+ Descendant Selector:
-Manfaat: Mengaplikasikan gaya ke elemen yang merupakan keturunan dari elemen lain.
-Waktu yang Tepat: Ketika ingin memberikan gaya ke elemen yang berada di dalam elemen lain.
++ Descendant Selector:<br>
+Manfaat: Mengaplikasikan gaya ke elemen yang merupakan keturunan dari elemen lain.<br>
+Waktu yang Tepat: Ketika ingin memberikan gaya ke elemen yang berada di dalam elemen lain.<br>
 
-+ Child Selector:
-Manfaat: Mengaplikasikan gaya ke elemen yang merupakan anak langsung dari elemen lain.
-Waktu yang Tepat: Ketika ingin memberikan gaya hanya ke anak langsung dan bukan ke semua keturunan.
++ Child Selector:<br>
+Manfaat: Mengaplikasikan gaya ke elemen yang merupakan anak langsung dari elemen lain.<br>
+Waktu yang Tepat: Ketika ingin memberikan gaya hanya ke anak langsung dan bukan ke semua keturunan.<br>
 
-+ Pseudo-class Selector:
-Manfaat: Mengaplikasikan gaya berdasarkan keadaan atau status elemen.
-Waktu yang Tepat: Ketika ingin memberikan gaya berdasarkan keadaan tertentu seperti hover atau focus.
++ Pseudo-class Selector:<br>
+Manfaat: Mengaplikasikan gaya berdasarkan keadaan atau status elemen.<br>
+Waktu yang Tepat: Ketika ingin memberikan gaya berdasarkan keadaan tertentu seperti hover atau focus.<br>
 
-+ Pseudo-element Selector:
-Manfaat: Mengaplikasikan gaya ke bagian tertentu dari elemen.
-Waktu yang Tepat: Ketika ingin memberikan gaya ke bagian spesifik dari elemen seperti first line atau first letter.
++ Pseudo-element Selector:<br>
+Manfaat: Mengaplikasikan gaya ke bagian tertentu dari elemen.<br>
+Waktu yang Tepat: Ketika ingin memberikan gaya ke bagian spesifik dari elemen seperti first line atau first letter.<br>
 
-+ Grouping Selector:
-Manfaat: Mengelompokkan beberapa selector untuk menerapkan gaya yang sama.
-Waktu yang Tepat: Ketika beberapa selector memerlukan gaya yang sama, sehingga mengurangi redundansi kode.
++ Grouping Selector:<br>
+Manfaat: Mengelompokkan beberapa selector untuk menerapkan gaya yang sama.<br>
+Waktu yang Tepat: Ketika beberapa selector memerlukan gaya yang sama, sehingga mengurangi redundansi kode.<br>
 
-+ Universal Selector:
-Manfaat: Mengaplikasikan gaya ke semua elemen pada halaman.
-Waktu yang Tepat: Ketika ingin memberikan gaya ke semua elemen, tetapi perlu digunakan dengan hati-hati karena dapat mempengaruhi semua elemen di halaman.
++ Universal Selector:<br>
+Manfaat: Mengaplikasikan gaya ke semua elemen pada halaman.<br>
+Waktu yang Tepat: Ketika ingin memberikan gaya ke semua elemen, tetapi perlu digunakan dengan hati-hati karena dapat mempengaruhi semua elemen di halaman.<br>
 
-+ Combination of Selectors:
-Manfaat: Mengaplikasikan gaya dengan target yang lebih spesifik.
-Waktu yang Tepat: Ketika perlu menargetkan elemen dengan cara yang lebih spesifik dan presisi.
++ Combination of Selectors:<br>
+Manfaat: Mengaplikasikan gaya dengan target yang lebih spesifik.<br>
+Waktu yang Tepat: Ketika perlu menargetkan elemen dengan cara yang lebih spesifik dan presisi.<br>
 
 ## **Jelaskan HTML5 Tag yang kamu ketahui**
 Berikut adalah beberapa tag HTML5 yang umum digunakan:
 
 - [x] Struktur Dokumen:<br>
-  + <!DOCTYPE html>: Mendefinisikan dokumen sebagai HTML5.
-  + <html>: Elemen root dari dokumen HTML.
-  + <head>: Berisi informasi meta tentang dokumen.
-  + <body>: Berisi konten utama dari dokumen HTML.
+  + `<!DOCTYPE html>`: Mendefinisikan dokumen sebagai HTML5.
+  + `<html>`: Elemen root dari dokumen HTML.
+  + `<head>`: Berisi informasi meta tentang dokumen.
+  + `<body>`: Berisi konten utama dari dokumen HTML.
 - [x] Struktur Konten:<br>
-  + <header>: Digunakan untuk header dokumen atau bagian.
-  + <nav>: Digunakan untuk navigasi.
-  + <main>: Berisi konten utama dari dokumen.
-  + <footer>: Digunakan untuk footer dokumen atau bagian.
+  + `<header>`: Digunakan untuk header dokumen atau bagian.
+  + `<nav>`: Digunakan untuk navigasi.
+  + `<main>`: Berisi konten utama dari dokumen.
+  + `<footer>`: Digunakan untuk footer dokumen atau bagian.
 - [x] Konten Teks:<br>
-  + <h1> hingga <h6>: Heading atau judul, dari level 1 (paling penting) hingga level 6 (paling tidak penting).
-  + <p>: Paragraf.
-  + <span>: Digunakan untuk mengelompokkan atau menerapkan gaya ke teks inline.
-  + <strong>: Teks tebal.
-  + <em>: Teks miring.
+  + `<h1>` hingga <h6>: Heading atau judul, dari level 1 (paling penting) hingga level 6 (paling tidak penting).
+  + `<p>`: Paragraf.
+  + `<span>`: Digunakan untuk mengelompokkan atau menerapkan gaya ke teks inline.
+  + `<strong>`: Teks tebal.
+  + `<em>`: Teks miring.
 - [x] Form:<br>
-  + <form>: Digunakan untuk membuat form.
-  + <input>: Digunakan untuk membuat berbagai jenis input, seperti teks, checkbox, radio button, dll.
-  + <label>: Label untuk elemen <input>.
-  + <textarea>: Input teks multiline.
-  + <button>: Tombol.
+  + `<form>`: Digunakan untuk membuat form.
+  + `<input>`: Digunakan untuk membuat berbagai jenis input, seperti teks, checkbox, radio button, dll.
+  + `<label>`: Label untuk elemen <input>.
+  + `<textarea>`: Input teks multiline.
+  + `<button>`: Tombol.
 - [x] Konten Media:<br>
-  + <img>: Gambar.
-  + <audio>: Elemen audio.
-  + <video>: Elemen video.
-  + <source>: Digunakan dalam <audio> atau <video> untuk mendefinisikan sumber media.
+  + `<img>`: Gambar.
+  + `<audio>`: Elemen audio.
+  + `<video>`: Elemen video.
+  + `<source>`: Digunakan dalam <audio> atau <video> untuk mendefinisikan sumber media.
 - [x] Tabel:<br>
-  + <table>: Tabel.
-  + <tr>: Baris tabel.
-  + <td>: Sel data tabel.
-  + <th>: Sel header tabel.
-  + <thead>: Grup header tabel.
-  + <tbody>: Grup badan tabel.
-  + <tfoot>: Grup footer tabel.
+  + `<table>`: Tabel.
+  + `<tr>`: Baris tabel.
+  + `<td>`: Sel data tabel.
+  + `<th>`: Sel header tabel.
+  + `<thead>`: Grup header tabel.
+  + `<tbody>`: Grup badan tabel.
+  + `<tfoot>`: Grup footer tabel.
 - [x] List:<br>
-  + <ul>: Daftar tidak terurut.
-  + <ol>: Daftar terurut.
-  + <li>: Item daftar.
+  + `<ul>`: Daftar tidak terurut.
+  + `<ol>`: Daftar terurut.
+  + `<li>`: Item daftar.
 - [x] Link:
-  + <a>: Hyperlink.
+  + `<a>`: Hyperlink.
 - [x] Lainnya:<br>
-  + <canvas>: Digunakan untuk menggambar grafik dengan JavaScript.
-  + <svg>: Digunakan untuk mendefinisikan grafik vektor berbasis XML.
+  + `<canvas>`: Digunakan untuk menggambar grafik dengan JavaScript.
+  + `<svg>`: Digunakan untuk mendefinisikan grafik vektor berbasis XML.
     
 ## **Jelaskan perbedaan antara margin dan padding**
 + Margin:
