@@ -1,3 +1,20 @@
+# **Tugas 5 - Pemrograman Berbasis Platform**
+
+**I Made Surya Anahata Putra**<br/>
+**2206081370**<br/>
+**PBP A**<br/>
+
+## **Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya**
+## **Jelaskan HTML5 Tag yang kamu ketahui**
+## **Jelaskan perbedaan antara margin dan padding**
+## **Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?**
+## **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step**
+- [x] Kustomisasi halaman login, register, dan tambah inventori semenarik mungkin<br>
+- [x] Kustomisasi halaman daftar inventori menjadi lebih berwarna<br>
+## **Melakukan add-commit-push ke GitHub**
+
+
+
 # **Tugas 4 - Pemrograman Berbasis Platform**
 
 **I Made Surya Anahata Putra**<br/>
