@@ -65,7 +65,7 @@ Berikut adalah beberapa tag HTML5 yang umum digunakan:
   + `<main>`: Berisi konten utama dari dokumen.
   + `<footer>`: Digunakan untuk footer dokumen atau bagian.
 - [x] Konten Teks:<br>
-  + `<h1>` hingga <h6>: Heading atau judul, dari level 1 (paling penting) hingga level 6 (paling tidak penting).
+  + `<h1>` hingga `<h6>`: Heading atau judul, dari level 1 (paling penting) hingga level 6 (paling tidak penting).
   + `<p>`: Paragraf.
   + `<span>`: Digunakan untuk mengelompokkan atau menerapkan gaya ke teks inline.
   + `<strong>`: Teks tebal.
@@ -100,17 +100,17 @@ Berikut adalah beberapa tag HTML5 yang umum digunakan:
   + `<svg>`: Digunakan untuk mendefinisikan grafik vektor berbasis XML.
     
 ## **Jelaskan perbedaan antara margin dan padding**
-+ Margin:
-Definisi: Margin adalah ruang di luar batas elemen, yang berfungsi sebagai ruang kosong antara elemen dengan elemen lain di sekitarnya.
-Posisi: Berada di luar border elemen.
-Kegunaan: Margin sering digunakan untuk membuat jarak atau ruang antara elemen-elemen pada halaman, seperti antara dua paragraf, dua div, atau antara elemen dengan tepi browser.
-Transparansi: Margin selalu transparan; tidak dapat diberi warna atau background.
++ Margin:<br>
+Definisi: Margin adalah ruang di luar batas elemen, yang berfungsi sebagai ruang kosong antara elemen dengan elemen lain di sekitarnya.<br>
+Posisi: Berada di luar border elemen.<br>
+Kegunaan: Margin sering digunakan untuk membuat jarak atau ruang antara elemen-elemen pada halaman, seperti antara dua paragraf, dua div, atau antara elemen dengan tepi browser.<br>
+Transparansi: Margin selalu transparan; tidak dapat diberi warna atau background.<br>
 
 + Padding:
-Definisi: Padding adalah ruang di dalam batas elemen, antara border dan konten elemen itu sendiri.
-Posisi: Berada di dalam border elemen.
-Kegunaan: Padding digunakan untuk membuat ruang di dalam elemen, yang dapat membuat elemen terlihat lebih besar atau memberikan ruang bernafas untuk konten di dalam elemen.
-Warna: Padding akan mengambil warna background dari elemen tersebut.
+Definisi: Padding adalah ruang di dalam batas elemen, antara border dan konten elemen itu sendiri.<br>
+Posisi: Berada di dalam border elemen.<br>
+Kegunaan: Padding digunakan untuk membuat ruang di dalam elemen, yang dapat membuat elemen terlihat lebih besar atau memberikan ruang bernafas untuk konten di dalam elemen.<br>
+Warna: Padding akan mengambil warna background dari elemen tersebut.<br>
 
 ## **Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?**
 **Tailwind CSS:**
@@ -160,32 +160,32 @@ Proyek Standar: Jika proyek Anda tidak memerlukan desain yang terlalu kustom ata
 - [x] Kustomisasi halaman login, register, dan tambah inventori semenarik mungkin<br>
 + Pada bagian  `index.html`, `about.html`, serta `main.html` tambahkan navbar dengan kode dibawah ini:
   ```
-  {%load static%}
-
-<link rel="stylesheet" type="text/css" href="{% static 'css/navstyle.css' %}">
-<nav class="navbar bg-white fixed-top navbar-expand-sm" id="myNav" >
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">
-            <img src="{% static 'img/log.png' %}" alt="">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/" title="">HOME</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/main" title="">MAIN</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about" title="">ABOUT</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-</nav>
+      {%load static%}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navstyle.css' %}">
+    <nav class="navbar bg-white fixed-top navbar-expand-sm" id="myNav" >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+                <img src="{% static 'img/log.png' %}" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-  expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/" title="">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/main" title="">MAIN</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about" title="">ABOUT</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
 
   ```
 + Kemudian customisasi halaman `login.html` dengan menggunakan css dengan menggunakan kode ini:
