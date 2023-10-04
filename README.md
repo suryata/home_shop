@@ -5,12 +5,551 @@
 **PBP A**<br/>
 
 ## **Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya**
+Berikut adalah ringkasan manfaat dan waktu yang tepat untuk menggunakan setiap jenis element selector dalam CSS:
+
++ Type Selector (Tag Selector):
+Manfaat: Mengaplikasikan gaya ke semua elemen dengan nama tag tertentu.
+Waktu yang Tepat: Ketika ingin memberikan gaya umum ke semua elemen dengan tag yang sama.
+
++ ID Selector:
+Manfaat: Mengaplikasikan gaya ke elemen dengan ID tertentu.
+Waktu yang Tepat: Ketika perlu memberikan gaya khusus ke elemen unik dengan ID tertentu.
+
++ Class Selector:
+Manfaat: Mengaplikasikan gaya ke semua elemen dengan class tertentu.
+Waktu yang Tepat: Ketika ingin memberikan gaya khusus ke grup elemen dengan class yang sama.
+
++ Attribute Selector:
+Manfaat: Mengaplikasikan gaya ke elemen berdasarkan atribut dan nilai atributnya.
+Waktu yang Tepat: Ketika ingin memberikan gaya ke elemen dengan atribut tertentu.
+
++ Descendant Selector:
+Manfaat: Mengaplikasikan gaya ke elemen yang merupakan keturunan dari elemen lain.
+Waktu yang Tepat: Ketika ingin memberikan gaya ke elemen yang berada di dalam elemen lain.
+
++ Child Selector:
+Manfaat: Mengaplikasikan gaya ke elemen yang merupakan anak langsung dari elemen lain.
+Waktu yang Tepat: Ketika ingin memberikan gaya hanya ke anak langsung dan bukan ke semua keturunan.
+
++ Pseudo-class Selector:
+Manfaat: Mengaplikasikan gaya berdasarkan keadaan atau status elemen.
+Waktu yang Tepat: Ketika ingin memberikan gaya berdasarkan keadaan tertentu seperti hover atau focus.
+
++ Pseudo-element Selector:
+Manfaat: Mengaplikasikan gaya ke bagian tertentu dari elemen.
+Waktu yang Tepat: Ketika ingin memberikan gaya ke bagian spesifik dari elemen seperti first line atau first letter.
+
++ Grouping Selector:
+Manfaat: Mengelompokkan beberapa selector untuk menerapkan gaya yang sama.
+Waktu yang Tepat: Ketika beberapa selector memerlukan gaya yang sama, sehingga mengurangi redundansi kode.
+
++ Universal Selector:
+Manfaat: Mengaplikasikan gaya ke semua elemen pada halaman.
+Waktu yang Tepat: Ketika ingin memberikan gaya ke semua elemen, tetapi perlu digunakan dengan hati-hati karena dapat mempengaruhi semua elemen di halaman.
+
++ Combination of Selectors:
+Manfaat: Mengaplikasikan gaya dengan target yang lebih spesifik.
+Waktu yang Tepat: Ketika perlu menargetkan elemen dengan cara yang lebih spesifik dan presisi.
+
 ## **Jelaskan HTML5 Tag yang kamu ketahui**
+Berikut adalah beberapa tag HTML5 yang umum digunakan:
+
+- [x] Struktur Dokumen:<br>
+  + <!DOCTYPE html>: Mendefinisikan dokumen sebagai HTML5.
+  + <html>: Elemen root dari dokumen HTML.
+  + <head>: Berisi informasi meta tentang dokumen.
+  + <body>: Berisi konten utama dari dokumen HTML.
+- [x] Struktur Konten:<br>
+  + <header>: Digunakan untuk header dokumen atau bagian.
+  + <nav>: Digunakan untuk navigasi.
+  + <main>: Berisi konten utama dari dokumen.
+  + <footer>: Digunakan untuk footer dokumen atau bagian.
+- [x] Konten Teks:<br>
+  + <h1> hingga <h6>: Heading atau judul, dari level 1 (paling penting) hingga level 6 (paling tidak penting).
+  + <p>: Paragraf.
+  + <span>: Digunakan untuk mengelompokkan atau menerapkan gaya ke teks inline.
+  + <strong>: Teks tebal.
+  + <em>: Teks miring.
+- [x] Form:<br>
+  + <form>: Digunakan untuk membuat form.
+  + <input>: Digunakan untuk membuat berbagai jenis input, seperti teks, checkbox, radio button, dll.
+  + <label>: Label untuk elemen <input>.
+  + <textarea>: Input teks multiline.
+  + <button>: Tombol.
+- [x] Konten Media:<br>
+  + <img>: Gambar.
+  + <audio>: Elemen audio.
+  + <video>: Elemen video.
+  + <source>: Digunakan dalam <audio> atau <video> untuk mendefinisikan sumber media.
+- [x] Tabel:<br>
+  + <table>: Tabel.
+  + <tr>: Baris tabel.
+  + <td>: Sel data tabel.
+  + <th>: Sel header tabel.
+  + <thead>: Grup header tabel.
+  + <tbody>: Grup badan tabel.
+  + <tfoot>: Grup footer tabel.
+- [x] List:<br>
+  + <ul>: Daftar tidak terurut.
+  + <ol>: Daftar terurut.
+  + <li>: Item daftar.
+- [x] Link:
+  + <a>: Hyperlink.
+- [x] Lainnya:<br>
+  + <canvas>: Digunakan untuk menggambar grafik dengan JavaScript.
+  + <svg>: Digunakan untuk mendefinisikan grafik vektor berbasis XML.
+    
 ## **Jelaskan perbedaan antara margin dan padding**
++ Margin:
+Definisi: Margin adalah ruang di luar batas elemen, yang berfungsi sebagai ruang kosong antara elemen dengan elemen lain di sekitarnya.
+Posisi: Berada di luar border elemen.
+Kegunaan: Margin sering digunakan untuk membuat jarak atau ruang antara elemen-elemen pada halaman, seperti antara dua paragraf, dua div, atau antara elemen dengan tepi browser.
+Transparansi: Margin selalu transparan; tidak dapat diberi warna atau background.
+
++ Padding:
+Definisi: Padding adalah ruang di dalam batas elemen, antara border dan konten elemen itu sendiri.
+Posisi: Berada di dalam border elemen.
+Kegunaan: Padding digunakan untuk membuat ruang di dalam elemen, yang dapat membuat elemen terlihat lebih besar atau memberikan ruang bernafas untuk konten di dalam elemen.
+Warna: Padding akan mengambil warna background dari elemen tersebut.
+
 ## **Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?**
+**Tailwind CSS:**
+
+Utility-First: Tailwind adalah framework CSS utility-first, yang berarti ia menyediakan banyak class utility yang dapat digunakan untuk membangun desain tanpa meninggalkan HTML. Ini memungkinkan pengembang untuk membuat antarmuka dengan cepat tanpa harus menulis CSS kustom.
+Kustomisasi: Tailwind sangat fleksibel dan dapat dikustomisasi dengan mudah. Pengembang dapat menambahkan, mengubah, atau menghapus class utility sesuai kebutuhan.
+Tidak Ada Komponen Bawaan: Tidak menyediakan komponen UI bawaan seperti Bootstrap. Ini memberikan kebebasan penuh kepada pengembang untuk membuat komponen sesuai kebutuhan.
+Pendekatan Desain Atomik: Mengikuti prinsip desain atomik, di mana desain dibangun menggunakan class-class kecil yang masing-masing mengatur satu properti atau nilai.
+
+**Bootstrap:**
+Komponen UI Bawaan: Bootstrap menyediakan komponen UI yang telah dirancang dan siap pakai, seperti navigasi, modals, dan kartu, yang dapat membantu mempercepat proses pengembangan.
+Tematik: Bootstrap memungkinkan pengembang untuk dengan mudah mengubah tema dengan variabel dan kelas yang telah ditentukan.
+JavaScript Plugins: Menyediakan plugin JavaScript untuk beberapa komponen, seperti carousel dan tooltips, yang memungkinkan fungsionalitas tambahan.
+Grid System: Bootstrap memiliki sistem grid yang kuat dan responsif, yang memudahkan pengembang untuk membuat layout yang kompleks.
+
+**Kapan Menggunakan Tailwind:**
+Proyek Kustom: Tailwind cocok untuk proyek yang memerlukan desain kustom atau tidak ingin terlihat seperti template Bootstrap klasik.
+Pengembangan Cepat: Jika Anda mencari pengembangan yang cepat dengan menggunakan class utility tanpa menulis banyak CSS kustom.
+Kontrol Desain: Cocok untuk pengembang yang ingin kontrol penuh atas desain tanpa harus overwrite style bawaan framework.
+
+**Kapan Menggunakan Bootstrap:**
+Prototyping Cepat: Bootstrap adalah pilihan yang baik untuk prototyping cepat karena menyediakan banyak komponen siap pakai.
+Pengembang Pemula: Cocok untuk pengembang yang belum terlalu familiar dengan CSS dan desain, karena menyediakan solusi desain yang konsisten dan terdokumentasi dengan baik.
+Proyek Standar: Jika proyek Anda tidak memerlukan desain yang terlalu kustom atau unik, Bootstrap dapat menjadi pilihan yang efisien dan cepat.
+
 ## **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step**
+* Pada direktori templates, buka berkas base.html lalu tambahkan kode dibawah ini
+```
+<head>
+    {% block meta %}
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% endblock meta %}
+</head>
+```
+
+* Tambahkan juga Bootstrap CSS dan juga JS
+```
+        {% endblock meta %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+J4jsl5c9zdLKaUk5Ae5f5b1bw6AUn5f5v8FZJoMxm6f5cH1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    </head>
+```
+
 - [x] Kustomisasi halaman login, register, dan tambah inventori semenarik mungkin<br>
++ Pada bagian  `index.html`, `about.html`, serta `main.html` tambahkan navbar dengan kode dibawah ini:
+  ```
+  {%load static%}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/navstyle.css' %}">
+<nav class="navbar bg-white fixed-top navbar-expand-sm" id="myNav" >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+            <img src="{% static 'img/log.png' %}" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/" title="">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/main" title="">MAIN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about" title="">ABOUT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+  ```
++ Kemudian customisasi halaman `login.html` dengan menggunakan css dengan menggunakan kode ini:
+```
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #ffffff; /* White background */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
+      padding-top: 2%;
+  }
+  
+  .logo {
+  width: 300px; /* Adjust as needed */
+  height: auto;
+  margin-bottom: 10px;
+  }
+  
+  .login {
+  background-color: #f5f5dc; /* Beige box */
+  padding: 60px 40px; 
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  width: 500px;
+  max-width: 80%; 
+  }
+  
+  .form-control {
+  width: 80%; 
+  padding: 10px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px; 
+  text-align: start;
+  }
+  
+  .login_btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 80%; 
+  font-size: 16px; 
+  }
+  
+  .login_btn:hover {
+  opacity: 0.8;
+  }
+  
+  table {
+  width: 100%;
+  }
+  
+  td {
+  padding: 8px;
+  font-size: 16px; 
+  }
+  
+  ul {
+  list-style-type: none;
+  padding: 0;
+  }
+  
+  li {
+  margin: 5px 0;
+  color: red;
+  font-size: 16px; 
+  }
+  
+  a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 16px; 
+  }
+  
+  a:hover {
+  text-decoration: underline;
+  }
+  
+```
+
++ Kemudian customisasi halaman `register.html` dengan menggunakan css dengan menggunakan kode ini:
+```
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: flex-start;
+      min-height: 100vh;
+  }
+  
+  h1 {
+      margin-bottom: 5%;
+      padding-top: 2%;
+      color: #333;
+      font-weight: 300; 
+      font-size: 32px; 
+      letter-spacing: 7px;
+  }
+    
+  .login {
+      background-color: #f5f5dc; 
+      padding: 2px 80px;
+      border-radius: 8px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+      width: 70%; /* Adjusted width */
+      max-width: 90%;
+      text-align: start;
+  }
+  
+  .logo {
+      width: 300px; 
+      height: auto;
+      margin-bottom: 10px;
+  }
+  
+  table {
+      width: 100%;
+  }
+  
+  td {
+      padding: 8px;
+      font-size: 18px;
+      vertical-align: middle;
+  }
+  
+  input[type="submit"][name="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      width: 90%; /* Adjusted width */
+      margin-bottom: 4%;
+  }
+  
+  input[type="submit"][name="submit"]:hover {
+      opacity: 0.8;
+  }
+  
+  ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0; 
+      width: 80%; 
+      margin-left: auto; 
+      margin-right: auto; 
+      text-align: left; 
+  }
+    
+  li {
+      margin: 5px 0;
+      color: #333;
+      font-size: 16px;
+  }
+
+```
++ Kemudian customisasi tambah inventory yaitu halaman `create_product.html` dengan menggunakan css dengan menggunakan kode ini:
+```
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding-top: 5%;
+  }
+    
+  h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 300; 
+  font-size: 32px; 
+  }
+  
+  form {
+  background-color: #f5f5dc; 
+  padding: 20px 60px; 
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  width: 600px; 
+  max-width: 100%; 
+  text-align: start;
+  }
+  
+  table {
+  width: 100%;
+  margin: 25px 0; 
+  }
+  
+  td {
+  padding: 8px;
+  font-size: 18px;
+  vertical-align:auto;
+  }
+  
+  input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  width: 75%;
+  margin-top: 20px;
+  }
+  
+  input[type="submit"]:hover {
+  background-color: #337736;
+  }
+  
+  .back-button {
+      padding: 10px 20px;
+      background-color: #ccc;  
+      color: #333;
+      border: none;
+      text-decoration: none;  
+      display: inline-block;  
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      width: 75%;
+      margin-top: 20px;
+      text-align: center;
+  }
+  
+  .back-button:hover {
+      background-color: #bbb;  
+  }
+```
+
 - [x] Kustomisasi halaman daftar inventori menjadi lebih berwarna<br>
++ Tambahkan Bootstrap untuk membuat tabel pada `main.html` dengan menambahkan kode ini:
+```
+ <div class="table-container"> 
+        <h5>Kamu menyimpan {{total_item}} item pada aplikasi ini.</h5>   
+        <table class="table table-bordered">
+            <thead class="table-secondary">
+```
+
++ Customisasi daftar inventory yaitu halaman `main.html` dengan menggunakan css dengan menggunakan kode ini:
+```
+  body {
+      color: #333; /* dark text */
+  }
+  
+  .tugas h1 {
+      padding-top: 110px;
+      font-family: Cambria;
+      text-align: center;
+      color: #333; /* dark text */
+  }
+  
+  .tugas {
+      background-color: rgb(222, 213, 206);
+  }
+  
+  .profil {
+      padding-top: 50px;
+      padding-bottom: 10px;
+      padding-left: 100px; 
+      color: #333; /* dark text */
+  }
+  
+  .table-container {
+      padding-top: 50px;
+      max-width: 1000px;
+      margin: 0 auto;
+  }
+  
+  .table {
+      width: 100%;
+      margin: 20px 0;
+      border-collapse: collapse;
+      background-color: #f9f9f9; 
+  }
+  
+  .table th {
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f5f5dc; /* beige header */
+  }
+  
+  .table td {
+      padding: 10px;
+      border: 1px solid #ccc;
+  }
+  
+  .last-row {
+      background-color: #ffe48a; 
+  }
+  
+  button {
+      padding: 8px 12px;
+      cursor: pointer;
+      background-color: #4CAF50; 
+      color: white;
+      border: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+  }
+  
+  button:hover {
+      background-color: #45a049; 
+  }
+  
+  h4{
+      padding-bottom: 5%;
+  }
+  
+  a{
+      padding-top: 5%;
+      text-decoration: none;
+  }
+  
+  .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #4CAF50;
+      border: none;
+      text-decoration: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      align-items: center;
+      width: 200px;
+  }
+  
+  .btn:hover {
+      background-color: #45a049;  
+  }
+  
+  .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px; 
+  }
+```
+
 ## **Melakukan add-commit-push ke GitHub**
 
 
