@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block meta %}
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 {% endblock meta %}
 
 {% block content %}
 
+<a href="/" title="Home">
+    <img src="{% static 'img/log.png' %}" alt="" class="logo">
+</a>
 <div class = "login">
-
-    <h1>Login</h1>
 
     <form method="POST" action="">
         {% csrf_token %}

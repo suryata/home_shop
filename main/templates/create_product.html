@@ -1,4 +1,10 @@
 {% extends 'base.html' %} 
+{% load static %}   
+{% block meta %}
+<title>{{app_name}}</title>
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/bootstrap.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/create.css' %}">
+{% endblock meta %}
 
 {% block content %}
 <h1>Add New Product</h1>
@@ -11,9 +17,11 @@
             <td></td>
             <td>
                 <input type="submit" value="Add Product"/>
+                <a href="/main" class="back-button">Go Back</a>
             </td>
         </tr>
     </table>
 </form>
+
 
 {% endblock %}

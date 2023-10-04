@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block meta %}
     <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/regis.css' %}">
 {% endblock meta %}
 
 {% block content %}  
 
+<a href="/" title="Home">
+    <img src="{% static 'img/log.png' %}" alt="" class="logo">
+</a>
 <div class = "login">
-    
-    <h1>Register</h1>  
+    <h1>Register</h1>
 
         <form method="POST" >  
             {% csrf_token %}  
@@ -24,7 +30,7 @@
     {% if messages %}  
         <ul>   
             {% for message in messages %}  
-                <li>{{ message }}</li>  
+                
                 {% endfor %}  
         </ul>   
     {% endif %}

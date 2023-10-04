@@ -1,14 +1,46 @@
 <!DOCTYPE html>
+<html lang="id">
 {% load static %}
 
-<html>
 <head>
-    <title>About</title>
-    {%include "snippets/styles.html"%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'about/css/about.css' %}"> 
 </head>
+
 <body>
   {%include "snippets/navbar.html"%}
-  {%include "snippets/scripts.html"%}
+  <br>
+  <br>
+  <br>
+  <br>
+  <section class="intro-section">
+      <div class="container">
+        <h1 >Our Story</h1>
+          <p>Founded in the heart of Jakarta in 2000, Furniture & Interior has been a cornerstone in the community, providing timeless and sophisticated minimalist interior designs that transform spaces into comfortable and elegant environments.</p>
+      </div>
+  </section>
+
+  <section class="about-section">
+      <div class="container">
+          <h1 >About Our Company</h1>
+          <p>We specialize in creating minimalist interior designs with a focus on quality and aesthetics. Our company has a rich history of delivering exceptional designs that align with our clients’ visions and preferences.</p>
+          <img src="{% static 'about/img/bg.jpg' %}" alt="bg.jpg" class="about-image">
+          <h1 >Our Background</h1>
+          <p>With a team of experienced designers, we ensure each project is executed with precision and creativity, making us a trusted partner for interior design solutions for over two decades.</p>
+          <br>
+          <br>
+      </div>
+  </section>
+
+  <footer>
+      <div class="container">
+          <p>&copy; 2023 Furniture & Interior. All rights reserved.</p>
+      </div>
+  </footer>
 </body>
-</html> 
+
+</html>
 

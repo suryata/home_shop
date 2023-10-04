@@ -1,26 +1,99 @@
-.tugas h1{
+body {
+    color: #333; /* dark text */
+}
+
+.tugas h1 {
     padding-top: 110px;
     font-family: Cambria;
     text-align: center;
+    color: #333; /* dark text */
 }
 
-.tugas{
+.tugas {
     background-color: rgb(222, 213, 206);
 }
 
 .profil {
- padding-top: 50px;
- padding-bottom: 10px;
- padding-left: 100px;       
+    padding-top: 50px;
+    padding-bottom: 10px;
+    padding-left: 100px; 
+    color: #333; /* dark text */
 }
 
 .table-container {
-    padding-top:50px;
-    max-width: 1000px; /* Set the maximum width of the container */
-    margin: 0 auto;  /* Center the container horizontally */
+    padding-top: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.table{
+.table {
     width: 100%;
-    background-color: rgb(73, 55, 31);
+    margin: 20px 0;
+    border-collapse: collapse;
+    background-color: #f9f9f9; 
 }
+
+.table th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f5f5dc; /* beige header */
+}
+
+.table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.last-row {
+    background-color: #ffe48a; 
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; 
+}
+
+h4{
+    padding-bottom: 5%;
+}
+
+a{
+    padding-top: 5%;
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-items: center;
+    width: 200px;
+}
+
+.btn:hover {
+    background-color: #45a049;  
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+}
+
