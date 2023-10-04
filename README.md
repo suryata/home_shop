@@ -113,28 +113,28 @@ Kegunaan: Padding digunakan untuk membuat ruang di dalam elemen, yang dapat memb
 Warna: Padding akan mengambil warna background dari elemen tersebut.<br>
 
 ## **Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?**
-**Tailwind CSS:**
+**Tailwind CSS:**<br>
 
-Utility-First: Tailwind adalah framework CSS utility-first, yang berarti ia menyediakan banyak class utility yang dapat digunakan untuk membangun desain tanpa meninggalkan HTML. Ini memungkinkan pengembang untuk membuat antarmuka dengan cepat tanpa harus menulis CSS kustom.<br>
-Kustomisasi: Tailwind sangat fleksibel dan dapat dikustomisasi dengan mudah. Pengembang dapat menambahkan, mengubah, atau menghapus class utility sesuai kebutuhan.<br>
-Tidak Ada Komponen Bawaan: Tidak menyediakan komponen UI bawaan seperti Bootstrap. Ini memberikan kebebasan penuh kepada pengembang untuk membuat komponen sesuai kebutuhan.<br>
-Pendekatan Desain Atomik: Mengikuti prinsip desain atomik, di mana desain dibangun menggunakan class-class kecil yang masing-masing mengatur satu properti atau nilai.<br>
+Utility-First: Tailwind adalah framework CSS utility-first, yang berarti ia menyediakan banyak class utility yang dapat digunakan untuk membangun desain tanpa meninggalkan HTML. Ini memungkinkan pengembang untuk membuat antarmuka dengan cepat tanpa harus menulis CSS kustom.<br><br>
+Kustomisasi: Tailwind sangat fleksibel dan dapat dikustomisasi dengan mudah. Pengembang dapat menambahkan, mengubah, atau menghapus class utility sesuai kebutuhan.<br><br>
+Tidak Ada Komponen Bawaan: Tidak menyediakan komponen UI bawaan seperti Bootstrap. Ini memberikan kebebasan penuh kepada pengembang untuk membuat komponen sesuai kebutuhan.<br><br>
+Pendekatan Desain Atomik: Mengikuti prinsip desain atomik, di mana desain dibangun menggunakan class-class kecil yang masing-masing mengatur satu properti atau nilai.<br><br>
 
-**Bootstrap:**
-Komponen UI Bawaan: Bootstrap menyediakan komponen UI yang telah dirancang dan siap pakai, seperti navigasi, modals, dan kartu, yang dapat membantu mempercepat proses pengembangan.<br>
-Tematik: Bootstrap memungkinkan pengembang untuk dengan mudah mengubah tema dengan variabel dan kelas yang telah ditentukan.<br>
-JavaScript Plugins: Menyediakan plugin JavaScript untuk beberapa komponen, seperti carousel dan tooltips, yang memungkinkan fungsionalitas tambahan.<br>
-Grid System: Bootstrap memiliki sistem grid yang kuat dan responsif, yang memudahkan pengembang untuk membuat layout yang kompleks.<br>
+**Bootstrap:**<br>
+Komponen UI Bawaan: Bootstrap menyediakan komponen UI yang telah dirancang dan siap pakai, seperti navigasi, modals, dan kartu, yang dapat membantu mempercepat proses pengembangan.<br><br>
+Tematik: Bootstrap memungkinkan pengembang untuk dengan mudah mengubah tema dengan variabel dan kelas yang telah ditentukan.<br><br>
+JavaScript Plugins: Menyediakan plugin JavaScript untuk beberapa komponen, seperti carousel dan tooltips, yang memungkinkan fungsionalitas tambahan.<br><br>
+Grid System: Bootstrap memiliki sistem grid yang kuat dan responsif, yang memudahkan pengembang untuk membuat layout yang kompleks.<br><br>
 
-**Kapan Menggunakan Tailwind:**
-Proyek Kustom: Tailwind cocok untuk proyek yang memerlukan desain kustom atau tidak ingin terlihat seperti template Bootstrap klasik.<br>
-Pengembangan Cepat: Jika Anda mencari pengembangan yang cepat dengan menggunakan class utility tanpa menulis banyak CSS kustom.<br>
-Kontrol Desain: Cocok untuk pengembang yang ingin kontrol penuh atas desain tanpa harus overwrite style bawaan framework.<br>
+**Kapan Menggunakan Tailwind:**<br>
+Proyek Kustom: Tailwind cocok untuk proyek yang memerlukan desain kustom atau tidak ingin terlihat seperti template Bootstrap klasik.<br><br>
+Pengembangan Cepat: Jika Anda mencari pengembangan yang cepat dengan menggunakan class utility tanpa menulis banyak CSS kustom.<br><br>
+Kontrol Desain: Cocok untuk pengembang yang ingin kontrol penuh atas desain tanpa harus overwrite style bawaan framework.<br><br>
 
-**Kapan Menggunakan Bootstrap:**
-Prototyping Cepat: Bootstrap adalah pilihan yang baik untuk prototyping cepat karena menyediakan banyak komponen siap pakai.<br>
-Pengembang Pemula: Cocok untuk pengembang yang belum terlalu familiar dengan CSS dan desain, karena menyediakan solusi desain yang konsisten dan terdokumentasi dengan baik.<br>
-Proyek Standar: Jika proyek Anda tidak memerlukan desain yang terlalu kustom atau unik, Bootstrap dapat menjadi pilihan yang efisien dan cepat.<br>
+**Kapan Menggunakan Bootstrap:**<br>
+Prototyping Cepat: Bootstrap adalah pilihan yang baik untuk prototyping cepat karena menyediakan banyak komponen siap pakai.<br><br>
+Pengembang Pemula: Cocok untuk pengembang yang belum terlalu familiar dengan CSS dan desain, karena menyediakan solusi desain yang konsisten dan terdokumentasi dengan baik.<br><br>
+Proyek Standar: Jika proyek Anda tidak memerlukan desain yang terlalu kustom atau unik, Bootstrap dapat menjadi pilihan yang efisien dan cepat.<br><br>
 
 ## **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step**
 * Pada direktori templates, buka berkas base.html lalu tambahkan kode dibawah ini
