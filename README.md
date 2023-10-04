@@ -106,7 +106,7 @@ Posisi: Berada di luar border elemen.<br>
 Kegunaan: Margin sering digunakan untuk membuat jarak atau ruang antara elemen-elemen pada halaman, seperti antara dua paragraf, dua div, atau antara elemen dengan tepi browser.<br>
 Transparansi: Margin selalu transparan; tidak dapat diberi warna atau background.<br>
 
-+ Padding:
++ Padding:<br>
 Definisi: Padding adalah ruang di dalam batas elemen, antara border dan konten elemen itu sendiri.<br>
 Posisi: Berada di dalam border elemen.<br>
 Kegunaan: Padding digunakan untuk membuat ruang di dalam elemen, yang dapat membuat elemen terlihat lebih besar atau memberikan ruang bernafas untuk konten di dalam elemen.<br>
