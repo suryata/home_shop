@@ -20,34 +20,6 @@ body {
     color: #333; /* dark text */
 }
 
-.table-container {
-    padding-top: 50px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.table {
-    width: 100%;
-    margin: 20px 0;
-    border-collapse: collapse;
-    background-color: #f9f9f9; 
-}
-
-.table th {
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: #f5f5dc; /* beige header */
-}
-
-.table td {
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-.last-row {
-    background-color: #ffe48a; 
-}
-
 button {
     padding: 8px 12px;
     cursor: pointer;
@@ -97,3 +69,17 @@ a{
     gap: 20px; 
 }
 
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.narrow-btn {
+    width: 30px;           /* Width of the button */
+    padding: 2px 6px;      /* Padding around the text to make button height smaller */
+    font-size: 12px;       /* Smaller font size for the button text */
+    text-align: center;    /* Ensures that the text is centered */
+}

@@ -1,3 +1,292 @@
+# **Tugas 6 - Pemrograman Berbasis Platform**
+
+**Link Tugas : https://i-made213-tugas.pbp.cs.ui.ac.id/**<br/>
+**I Made Surya Anahata Putra**<br/>
+**2206081370**<br/>
+**PBP A**<br/>
+
+## **Jelaskan perbedaan antara asynchronous programming dengan synchronous programming**
+Berikut adalah perbedaan utama antara keduanya:<br/>
+
+> Alur Eksekusi:<br/>
+
++ Synchronous Programming<br/>
+Dalam pendekatan ini, tugas-tugas dieksekusi satu per satu. Tugas berikutnya harus menunggu hingga tugas sebelumnya selesai dieksekusi.
+
++ Asynchronous Programming<br/>
+Dalam pendekatan ini, tugas-tugas dapat dimulai dan dibiarkan berjalan di latar belakang tanpa perlu menunggu tugas-tugas sebelumnya selesai. Ketika tugas tersebut selesai, biasanya ada mekanisme (seperti callback, promise, atau async/await) untuk memberi tahu bahwa tugas tersebut telah selesai.
+
+> Responsifitas:<br/>
+
++ Synchronous<br/>
+Dapat membuat aplikasi tampak lambat atau "beku" jika ada operasi yang memerlukan waktu lama untuk dieksekusi, karena tugas-tugas lain harus menunggu.
++ Asynchronous<br/>
+Memungkinkan aplikasi tetap responsif meskipun ada operasi yang memerlukan waktu lama, karena operasi tersebut tidak menghentikan eksekusi tugas lain.
+
+> Kesulitan Pemrograman:
+
++ Synchronous<br/>
+Biasanya lebih mudah untuk dipahami dan didebug karena alur eksekusi tugas-tugas lebih linear.
++ Asynchronous<br/>
+Lebih sulit untuk didebug atau dipahami, terutama saat ada banyak tugas yang berjalan secara bersamaan. Namun, banyak bahasa pemrograman modern dan framework telah memperkenalkan alat dan abstraksi untuk memudahkan asynchronous programming (seperti async/await dalam JavaScript).
+
+> Konteks Penggunaan:
+
++ Synchronous<br/>
+Cocok untuk skenario di mana operasi berikutnya bergantung pada hasil dari operasi sebelumnya.
++ Asynchronous<br/>
+Sangat berguna untuk operasi I/O seperti membaca/penulisan file, permintaan jaringan, atau interaksi dengan basis data, di mana Anda tidak ingin aplikasi Anda menunggu operasi tersebut selesai.
+
+## **Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini**
+Paradigma event-driven programming adalah pendekatan di mana alur eksekusi program ditentukan oleh urutan peristiwa (event) yang terjadi, bukan dari alur eksekusi yang sudah ditentukan sebelumnya atau berurutan. Dalam pemrograman berbasis event, kode tidak dijalankan dalam urutan dari atas ke bawah secara linear, melainkan berfungsi sebagai respons terhadap peristiwa tertentu yang mungkin terjadi sewaktu-waktu.
+
+> Beberapa ciri utama dari event-driven programming:<br>
+
++ Event Listeners<br>
+Sebagian besar kode dalam pemrograman event-driven "mendengarkan" atau "memantau" peristiwa tertentu yang mungkin terjadi. Misalnya, dalam aplikasi web, kode mungkin "mendengarkan" klik tombol atau gerakan mouse.
+
++ Event Handlers<br>
+Ketika peristiwa yang dimaksud terjadi, fungsi atau blok kode tertentu, yang disebut "event handler", dijalankan sebagai respons. Misalnya, jika Anda memiliki kode yang merespons klik tombol, kode tersebut hanya akan dijalankan ketika tombol tersebut benar-benar diklik.
+
++ Asynchronous Nature<br>
+Karena program harus menunggu peristiwa untuk terjadi dan tidak bisa memprediksi dengan tepat kapan itu akan terjadi, pemrograman event-driven bersifat asynchronous.
+
+> Contoh penerapan pada tugas ini adalah implementasi tombol button addItem by ajax menggunakan konsep event driven dimana saat ada event scriptnya baru akan dijalankan.
+
+## **Jelaskan penerapan asynchronous programming pada AJAX**
+AJAX, yang merupakan kependekan dari Asynchronous JavaScript and XML, adalah teknik pemrograman yang memungkinkan suatu halaman web untuk berkomunikasi dengan server di latar belakang tanpa harus memuat ulang halaman secara keseluruhan. Prinsip asinkron di sini berarti bahwa ketika sebuah permintaan dikirim ke server menggunakan JavaScript, halaman web tidak menunggu respons langsung dari server. Sebaliknya, halaman dapat terus berfungsi dan merespons interaksi pengguna lainnya. Ketika respons dari server akhirnya diterima, sebuah fungsi callback dijalankan untuk memproses data tersebut, seperti menampilkan konten baru atau memperbarui elemen tertentu di halaman. Keunggulan utama dari pendekatan asinkron ini adalah halaman web tetap responsif sepanjang waktu, meningkatkan pengalaman pengguna dengan transisi yang halus dan tanpa gangguan dari pembaruan konten. Dalam intinya, pemrograman asinkron dengan AJAX menciptakan interaktivitas web yang dinamis, memungkinkan aplikasi web bekerja dengan cara yang mirip dengan aplikasi desktop atau mobile.
+
+## **Penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan**
+AJAX adalah teknik yang memungkinkan pengembang web untuk membuat permintaan asinkron ke server tanpa harus memuat ulang halaman. Sementara AJAX sendiri bukanlah sebuah teknologi atau library, ada berbagai cara untuk menerapkannya. Dua cara paling populer dalam beberapa tahun terakhir adalah menggunakan library jQuery dan Fetch API yang merupakan bagian dari Web API yang disediakan oleh browser modern.<br>
+
+> jQuery AJAX:<br>
+
++ Kemudahan Penggunaan<br>
+Salah satu alasan utama jQuery menjadi sangat populer adalah karena fungsinya yang mempermudah tugas-tugas umum seperti AJAX. Dengan jQuery, permintaan AJAX dapat dilakukan dengan beberapa baris kode sederhana.
++ Kompabilitas dengan Browser Lama<br>
+jQuery dirancang untuk bekerja dengan berbagai versi browser, termasuk beberapa browser lama yang mungkin tidak mendukung teknologi web modern.
++ Fitur Tambahan<br>
+Selain AJAX, jQuery juga menyediakan banyak fungsi lain untuk manipulasi DOM, animasi, dan lainnya.
++ Ukuran Library<br>
+Menggunakan jQuery berarti menambahkan berat file ke proyek. Meskipun ini mungkin bukan masalah besar bagi banyak aplikasi, hal ini bisa menjadi pertimbangan jika performa dan ukuran file menjadi prioritas.
+
+> Fetch API:<br>
+
++ Standar Modern<br>
+Fetch API adalah standar web modern yang disediakan oleh mayoritas browser modern. Ini berarti tidak memerlukan library eksternal untuk digunakan.
++ Promises dan Async/Await<br>
+Fetch API menggunakan Promises, yang membuat kode asinkron lebih mudah dibaca dan dikelola. Ini juga kompatibel dengan sintaks async/await yang lebih baru, memungkinkan penulisan kode yang lebih bersih dan intuitif.
++ Fleksibilitas<br>
+Fetch API memberikan lebih banyak kontrol dan fleksibilitas terhadap permintaan dan respons dibandingkan dengan jQuery.
++ Kurangnya Dukungan untuk Browser Lama<br>
+Meskipun banyak browser modern mendukung Fetch API, beberapa browser lama (seperti Internet Explorer) tidak mendukungnya.
+
+## **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step**
+- [x] Mengubah tugas 5 yang telah dibuat sebelumnya menjadi menggunakan AJAX.
+	- [x] AJAX GET
+		- [x] Ubahlah kode cards data item agar dapat mendukung AJAX GET.
+        * Tambahkan kode berikut di bagian dalam <script> </script> untuk cards data item dengan AJAX GET:
+        ```
+            async function refreshProducts() {
+            const container = document.getElementById("product_cards");
+            container.innerHTML = ""; // Clear the previous cards
+            const products = await getProducts();
+        
+            // Fetch CSRF token from meta tag
+            let csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        
+            let htmlString = "";
+            products.forEach((item, index) => {
+                // Every 3 items, add a row div
+                if (index % 3 === 0) {
+                    htmlString += `<div class="row">`;
+                }
+        
+                // Add the card inside a wider column with modified button layout and beige background color
+                htmlString += `
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card" style="background-color: beige;">
+                        <div class="card-header">${item.fields.name}</div>
+                        <div class="card-body">
+                            <p><strong>Harga:</strong> ${item.fields.price}</p>
+                            <p><strong>Date Added:</strong> ${item.fields.date_added}</p>
+                            <p><strong>Description:</strong> ${item.fields.description}</p>
+                            <p><strong>Amount:</strong> ${item.fields.amount}</p>
+                            
+                            <div class="row">
+                                <div class="col-4">
+                                    <form method="post" action="tambah/${item.pk}/">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="${csrfToken}">
+                                        <button type="submit" class="btn btn-light narrow-btn">+</button>
+                                    </form>
+                                </div>
+                                
+                                <div class="col-4">
+                                    <form method="post" action="kurang/${item.pk}/">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="${csrfToken}">
+                                        <button type="submit" class="btn btn-light narrow-btn">-</button>
+                                    </form>
+                                </div>
+        
+                                <div class="col-4">
+                                    <form method="post" action="hapus/${item.pk}/">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="${csrfToken}">
+                                        <button type="submit" cclass="btn btn-light narrow-btn"">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>`;
+        
+                if (index % 3 === 2 || index === products.length - 1) {
+                    htmlString += `</div>`;
+                }
+            });
+        
+            container.innerHTML = htmlString;
+        }
+        
+        refreshProducts();
+        ```
+    - [x] Lakukan pengambilan task menggunakan AJAX GET.
+      * Pada `views.py` tambahkan kode berikut:
+        ```
+        def get_product_json(request):
+        product_item = Item.objects.filter(user=request.user)
+        return HttpResponse(serializers.serialize('json', product_item))
+        ```
+      * Pada `urlpatterns` pada `urls.py` tambahkan kode berikut:
+        ```
+        path('get-product/', get_product_json, name='get_product_json'),
+        ```
+      * Pada `main.html` di dalam <script> </script> tambahkan fungsi `getItem()`:
+        ```
+        async function getProducts() {
+          return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+        }
+        ```
+  - [x] AJAX POST<br>
+		- [x] Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan item.<br>
+    * Pada berkas `main.html` tambahkanlah kode berikut setelah tulisan Sesi terakhir login:
+      ```
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-bottom: 10px;">Add Product by AJAX</button>
+      ```
+    - [x] Buatlah fungsi view baru untuk menambahkan item baru ke dalam basis data.<br>
+			* Buka berkas `views.py` pada direktori aplikasi `main`<br>
+			* Buatlah fungsi `add_item_ajax` sesuai dengan kode dibawah ini<br>
+        ```
+          @csrf_exempt
+          def add_product_ajax(request):
+              if request.method == 'POST':
+                  name = request.POST.get("name")
+                  price = request.POST.get("price")
+                  description = request.POST.get("description")
+                  amount = request.POST.get("amount")
+                  user = request.user
+
+                  new_product = Item(name=name, price=price, description=description, user=user, amount = amount)
+                  new_product.save()
+
+                  return HttpResponse(b"CREATED", status=201)
+              return HttpResponseNotFound()
+        ```
+    - [x] Buatlah path `/create-ajax/` yang mengarah ke fungsi view yang baru kamu buat.
+			* Buka berkas `urls.py` lalu tambahkan kode berikut pada `urlpatterns`:
+        ```
+            path('create-ajax/', add_item_ajax, name='add_item_ajax')
+        ```
+    - [x] Hubungkan form yang telah kamu buat di dalam modal kamu ke path `/create-ajax/`.
+			* Pada berkas `main.html` tambahkan fungsi `addProduct()` seperti kode dibawah ini:
+      ```
+        function addProduct() {
+              fetch("{% url 'main:add_product_ajax' %}", {
+                  method: "POST",
+                  body: new FormData(document.querySelector('#form'))
+              }).then(refreshProducts)
+      
+              document.getElementById("form").reset()
+
+              return false
+          }
+          document.getElementById("button_add").onclick = addProduct
+      ```
+    - [x] Lakukan *refresh* pada halaman utama secara asinkronus untuk menampilkan daftar item terbaru tanpa *reload* halaman utama secara keseluruhan.
+			* Tambahkan kode berikut di bagian dalam <script> </script>
+      ```
+      async function refreshProducts() {
+            const container = document.getElementById("product_cards");
+            container.innerHTML = ""; // Clear the previous cards
+            const products = await getProducts();
+        
+            // Fetch CSRF token from meta tag
+            let csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        
+            let htmlString = "";
+            products.forEach((item, index) => {
+                // Every 3 items, add a row div
+                if (index % 3 === 0) {
+                    htmlString += `<div class="row">`;
+                }
+        
+                // Add the card inside a wider column with modified button layout and beige background color
+                htmlString += `
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card" style="background-color: beige;">
+                        <div class="card-header">${item.fields.name}</div>
+                        <div class="card-body">
+                            <p><strong>Harga:</strong> ${item.fields.price}</p>
+                            <p><strong>Date Added:</strong> ${item.fields.date_added}</p>
+                            <p><strong>Description:</strong> ${item.fields.description}</p>
+                            <p><strong>Amount:</strong> ${item.fields.amount}</p>
+                            
+                            <div class="row">
+                                <div class="col-4">
+                                    <form method="post" action="tambah/${item.pk}/">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="${csrfToken}">
+                                        <button type="submit" class="btn btn-light narrow-btn">+</button>
+                                    </form>
+                                </div>
+                                
+                                <div class="col-4">
+                                    <form method="post" action="kurang/${item.pk}/">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="${csrfToken}">
+                                        <button type="submit" class="btn btn-light narrow-btn">-</button>
+                                    </form>
+                                </div>
+        
+                                <div class="col-4">
+                                    <form method="post" action="hapus/${item.pk}/">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="${csrfToken}">
+                                        <button type="submit" cclass="btn btn-light narrow-btn"">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>`;
+        
+                if (index % 3 === 2 || index === products.length - 1) {
+                    htmlString += `</div>`;
+                }
+            });
+        
+            container.innerHTML = htmlString;
+        }
+        
+        refreshProducts();
+      ```
+    - [x] Melakukan perintah `collectstatic`.<br>
+		    * Jalan `python manage.py collectstatic` pada console.<br>
+
+## **Melakukan add-commit-push ke GitHub**
+
+## **Melakukan deployment ke PaaS PBP Fasilkom UI dan sertakan tautan aplikasi pada file README.md**
+
+
+
 # **Tugas 5 - Pemrograman Berbasis Platform**
 
 **I Made Surya Anahata Putra**<br/>

@@ -1,6 +1,5 @@
-from django.urls import path,include
-from main.views import show_main, create_product, show_xml, show_json, show_xml_by_id, show_json_by_id, logout_user, tambah_amount, kurang_amount, hapus_item
-
+from django.urls import path
+from main.views import *
 
 app_name = 'main'
 
@@ -15,4 +14,7 @@ urlpatterns = [
     path('tambah/<int:id>/', tambah_amount, name='tambah_amount'),
     path('kurang/<int:id>/', kurang_amount, name='kurang_amount'),
     path('hapus/<int:id>/', hapus_item, name='hapus_item'),
+    path('get-product/', get_product_json, name='get_product_json'),
+    path('create-ajax/', add_product_ajax, name='add_product_ajax'),
+    path('delete-ajax/<int:id>/',delete_item_ajax,name='delete_item_ajax'),
 ]

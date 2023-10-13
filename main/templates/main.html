@@ -7,6 +7,7 @@
     <title>{{app_name}}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/bootstrap.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}">
+    <meta name="csrf-token" content="{{ csrf_token }}">
     {% endblock meta %}
 </head>
 <body>
@@ -25,65 +26,148 @@
     </div>
     
     <div class="table-container"> 
-        <h5>Kamu menyimpan {{total_item}} item pada aplikasi ini.</h5>   
-        <table class="table table-bordered">
-            <thead class="table-secondary">
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                    <th>Amount</th>
-                    <th>Date Added</th>
-                    <th>Tambah</th>
-                    <th>Kurang</th>
-                    <th>Hapus</th>
-                </tr>
-            </thead>
-
-            {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-
-            {% for Item in products %}
-                <tr {% if forloop.last %}class="table-warning"{% endif %}>
-                    <td>{{Item.name}}</td>
-                    <td>{{Item.price}}</td>
-                    <td>{{Item.description}}</td>
-                    <td>{{Item.amount}}</td>
-                    <td>{{Item.date_added}}</td>
-
-                    <td>
-                        <form method="post" action="{% url 'main:tambah_amount' Item.id %}">
-                            {% csrf_token %}
-                            <button type="submit">+</button>
-                        </form>
-                    </td>
-                    <td> 
-                        <form method="post" action="{% url 'main:kurang_amount' Item.id %}">
-                            {% csrf_token %}
-                            <button type="submit">-</button>
-                        </form>
-                    </td>
-                    <td> 
-                        <form method="post" action="{% url 'main:hapus_item' Item.id %}">
-                            {% csrf_token %}
-                            <button type="submit">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
-
-        <h4>Sesi terakhir login: {{ last_login }}</h4>
-        <div class="button-container">
-            <a href="{% url 'main:create_product' %}" class="btn">Add New Product</a>
-            <a href="{% url 'main:logout' %}" class="btn">Logout</a>
+        <div class="centered-content">
+            <h5>kamu menyimpan {{total_item}} item pada aplikasi ini</h5>  
+            <br>
+            <div id="product_cards" class="row"></div>
+            <h4>Sesi terakhir login: {{ last_login }}</h4>
+            <div class="button-container">
+                <a href="{% url 'main:create_product' %}" class="btn">Add New Product</a>
+                <a href="{% url 'main:logout' %}" class="btn">Logout</a>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+            </div>
         </div>
     </div>
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form" onsubmit="return false;">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="col-form-label">Price:</label>
+                            <input type="number" class="form-control" id="price" name="price"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="amount" class="col-form-label">Amount:</label>
+                            <input type="number" class="form-control" id="amount" name="amount"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="description" name="description"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    <script>
+
+        async function getProducts() {
+            return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
+        }
+
+        async function refreshProducts() {
+            const container = document.getElementById("product_cards");
+            container.innerHTML = ""; // Clear the previous cards
+            const products = await getProducts();
+        
+            // Fetch CSRF token from meta tag
+            let csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        
+            let htmlString = "";
+            products.forEach((item, index) => {
+                // Every 3 items, add a row div
+                if (index % 3 === 0) {
+                    htmlString += `<div class="row">`;
+                }
+        
+                let cardBackgroundColor = (index === products.length - 1) ? "orange" : "beige";
+        
+                // Add the card inside a wider column with modified button layout and background color
+                htmlString += `
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card" style="background-color: ${cardBackgroundColor};">
+                        <div class="card-header">${item.fields.name}</div>
+                        <div class="card-body">
+                            <p><strong>Harga:</strong> ${item.fields.price}</p>
+                            <p><strong>Date Added:</strong> ${item.fields.date_added}</p>
+                            <p><strong>Description:</strong> ${item.fields.description}</p>
+                            <p><strong>Amount:</strong> ${item.fields.amount}</p>
+                            
+                            <div class="row">
+                                <div class="col-4">
+                                    <form method="post" action="tambah/${item.pk}/">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="${csrfToken}">
+                                        <button type="submit" class="btn btn-light narrow-btn">+</button>
+                                    </form>
+                                </div>
+                                
+                                <div class="col-4">
+                                    <form method="post" action="kurang/${item.pk}/">
+                                        <input type="hidden" name="csrfmiddlewaretoken" value="${csrfToken}">
+                                        <button type="submit" class="btn btn-light narrow-btn">-</button>
+                                    </form>
+                                </div>
+        
+                                <div class="col-4">
+                                    <a><button onclick="deleteItem(${item.pk})" type="submit">Delete</button></a>
+                                </div>
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>`;
+        
+                if (index % 3 === 2 || index === products.length - 1) {
+                    htmlString += `</div>`;
+                }
+            });
+        
+            container.innerHTML = htmlString;
+        }
+        
+        refreshProducts();
+        
+        
+        function addProduct() {
+            fetch("{% url 'main:add_product_ajax' %}", {
+                method: "POST",
+                body: new FormData(document.querySelector('#form'))
+            }).then(refreshProducts)
+    
+            document.getElementById("form").reset()
+
+            return false
+        }
+        document.getElementById("button_add").onclick = addProduct
+
+        async function deleteItem(id){
+            let url="{% url 'main:delete_item_ajax' '999' %}";
+            url=url.replace('999',id);
+            const response =await fetch(url,{
+                method: "DELETE",
+            }).then(refreshProducts); 
+        }
+    </script>
+
 
     <br>
     <br>
-
-
-
     {%include "snippets/scripts.html"%}
     {% endblock content %}
 </body>

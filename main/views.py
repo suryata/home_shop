@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseNotFound, HttpResponseRedirect
 from main.forms import ItemForm
 from django.urls import reverse
 from main.models import Item
@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from django.core import serializers
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 @login_required(login_url='/login')
@@ -82,3 +83,29 @@ def hapus_item(request, id):
         item = Item.objects.get(pk=id)
         item.delete()
     return HttpResponseRedirect(reverse('main:show_main'))
+
+@csrf_exempt
+def add_product_ajax(request):
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        price = request.POST.get("price")
+        description = request.POST.get("description")
+        amount = request.POST.get("amount")
+        user = request.user
+
+        new_product = Item(name=name, price=price, description=description, user=user, amount = amount)
+        new_product.save()
+
+        return HttpResponse(b"CREATED", status=201)
+    return HttpResponseNotFound()
+
+def get_product_json(request):
+    product_item = Item.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', product_item))
+
+@csrf_exempt
+def delete_item_ajax(request, id):
+    if request.method == 'DELETE':
+        Item.objects.get(pk=id).delete()
+        return HttpResponse(b"DELETED", status = 201)
+    return HttpResponseNotFound()
