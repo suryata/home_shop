@@ -1,2 +1,2 @@
 release: django-admin migrate --noinput
-web: gunicorn shopping_list.wsgi
+web: gunicorn home_shop.wsgi
