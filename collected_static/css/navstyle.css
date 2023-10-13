@@ -1,0 +1,21 @@
+.nav-link {
+    color: #312823;
+    font-size: 16px; /* Adjust the font size as needed */
+    font-family:sans-serif;
+    margin-right: 50px;
+    letter-spacing: 4px;
+    word-spacing: 10px;
+    z-index: 2!important;
+}
+
+.nav-item:first-of-type .nav-link {
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(158, 105, 67);
+}
+
+.navbar-brand img{
+    padding-left: 20px;
+    height: 80px;
+}

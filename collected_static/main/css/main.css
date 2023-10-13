@@ -1,0 +1,85 @@
+body {
+    color: #333; /* dark text */
+}
+
+.tugas h1 {
+    padding-top: 110px;
+    font-family: Cambria;
+    text-align: center;
+    color: #333; /* dark text */
+}
+
+.tugas {
+    background-color: rgb(222, 213, 206);
+}
+
+.profil {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    padding-left: 100px; 
+    color: #333; /* dark text */
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; 
+}
+
+h4{
+    padding-bottom: 5%;
+}
+
+a{
+    padding-top: 5%;
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-items: center;
+    width: 200px;
+}
+
+.btn:hover {
+    background-color: #45a049;  
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.narrow-btn {
+    width: 30px;           /* Width of the button */
+    padding: 2px 6px;      /* Padding around the text to make button height smaller */
+    font-size: 12px;       /* Smaller font size for the button text */
+    text-align: center;    /* Ensures that the text is centered */
+}
