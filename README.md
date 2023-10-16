@@ -1,6 +1,6 @@
 # **Tugas 6 - Pemrograman Berbasis Platform**
 
-**Link Tugas : https://i-made213-tugas.pbp.cs.ui.ac.id/**<br/>
+**Link Tugas : http://i-made213-tugas.pbp.cs.ui.ac.id/**<br/>
 **I Made Surya Anahata Putra**<br/>
 **2206081370**<br/>
 **PBP A**<br/>
