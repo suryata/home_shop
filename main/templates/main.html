@@ -27,7 +27,7 @@
     
     <div class="table-container"> 
         <div class="centered-content">
-            <h5>kamu menyimpan {{total_item}} item pada aplikasi ini</h5>  
+            <h5 id="total_items">kamu menyimpan {{total_item}} item pada aplikasi ini</h5>
             <br>
             <div id="product_cards" class="row"></div>
             <h4>Sesi terakhir login: {{ last_login }}</h4>
@@ -82,10 +82,14 @@
         }
 
         async function refreshProducts() {
+            
             const container = document.getElementById("product_cards");
             container.innerHTML = ""; // Clear the previous cards
             const products = await getProducts();
-        
+            
+            const totalItemsText = document.querySelector('h5#total_items'); // Pastikan Anda memiliki elemen dengan id 'total_items'
+            totalItemsText.textContent = `kamu menyimpan ${products.length} item pada aplikasi ini`;
+
             // Fetch CSRF token from meta tag
             let csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
         
@@ -97,11 +101,11 @@
                 }
         
                 let cardBackgroundColor = (index === products.length - 1) ? "orange" : "beige";
-        
+                let columnClass = products.length === 1 ? 'col-12' : 'col-lg-4 col-md-6';
                 // Add the card inside a wider column with modified button layout and background color
                 htmlString += `
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card" style="background-color: ${cardBackgroundColor};">
+                <div class="${columnClass} mb-4">
+                    <div class="card" style="background-color: ${cardBackgroundColor}; max-height: 500px; overflow: auto;">
                         <div class="card-header">${item.fields.name}</div>
                         <div class="card-body">
                             <p><strong>Harga:</strong> ${item.fields.price}</p>

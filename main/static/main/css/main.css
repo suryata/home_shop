@@ -83,3 +83,15 @@ a{
     font-size: 12px;       /* Smaller font size for the button text */
     text-align: center;    /* Ensures that the text is centered */
 }
+
+#product_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start; /* Atau 'center' untuk memusatkan kartu pada halaman */
+  }
+  
+#product_cards .card {
+    flex: 1 1 auto; /* Kartu akan memenuhi ruang yang tersedia tanpa memanjang berlebihan */
+    max-height: 400px; /* Contoh tinggi maksimal, sesuaikan sesuai kebutuhan */
+    margin-bottom: 1rem; /* Memberi ruang di bawah setiap kartu */
+}
