@@ -1,5 +1,6 @@
+import json
 from django.shortcuts import redirect, render
-from django.http import HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponseNotFound, HttpResponseRedirect, JsonResponse
 from main.forms import ItemForm
 from django.urls import reverse
 from main.models import Item
@@ -99,6 +100,7 @@ def add_product_ajax(request):
         return HttpResponse(b"CREATED", status=201)
     return HttpResponseNotFound()
 
+@csrf_exempt
 def get_product_json(request):
     product_item = Item.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize('json', product_item))
@@ -109,3 +111,22 @@ def delete_item_ajax(request, id):
         Item.objects.get(pk=id).delete()
         return HttpResponse(b"DELETED", status = 201)
     return HttpResponseNotFound()
+
+def create_item_flutter(request):
+    if request.method == 'POST':
+
+        data = json.loads(request.body)
+
+        new_product = Item.objects.create(
+            user = request.user,
+            name = data["name"],
+            description = data["description"],
+            amount = int(data["amount"]),
+            rarity = data["rarity"],
+        )
+
+        new_product.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)

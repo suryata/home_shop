@@ -14,6 +14,13 @@ import os
 from pathlib import Path
 import environ # Tambahkan kode berikut
 
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SAMESITE = 'None'
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env() # Tambahkan kode berikut
@@ -30,6 +37,8 @@ PRODUCTION = env.bool('PRODUCTION', False)
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000/']
+CSRF_TRUSTED_ORIGINS = ['https://i-made213-tugas.pbp.cs.ui.ac.id']
 
 
 # Application definition
@@ -41,9 +50,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home_shop',
     'main',
     'about',
+    'authentication',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'home_shop.urls'
@@ -129,11 +140,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = 'collected_static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
 
-# Define the directory where your static files are stored
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

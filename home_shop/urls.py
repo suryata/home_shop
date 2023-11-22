@@ -12,4 +12,5 @@ urlpatterns = [
     path('about/',include('about.urls')),
     path('register/', register, name='register'),
     path('login/', login_user, name='login'),
+    path('auth/', include('authentication.urls')),
 ]
