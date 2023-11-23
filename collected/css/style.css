@@ -61,3 +61,61 @@ p{
     width: 350px;
     height: 300px;
 }
+
+/* Media Query untuk layar berukuran maksimal 768px */
+@media screen and (max-width: 768px) {
+    .jumbotron {
+        /* Sesuaikan padding atau height jika diperlukan */
+        padding-top: 2rem; /* Sedikit lebih kecil dari desktop */
+        height: 35vh; /* Tinggi disesuaikan agar elemen tidak terlalu mendominasi layar */
+    }
+
+    .services {
+        /* Ubah arah flexbox untuk menyusun link secara vertikal */
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+
+    .services a {
+        /* Sesuaikan margin untuk tampilan yang lebih kecil */
+        margin: 10px 0; /* Tambahkan spasi vertikal antar link */
+        font-size: 1.25rem; /* Ukuran font yang sedikit lebih besar untuk aksesibilitas */
+    }
+
+    .gambar img {
+        /* Sesuaikan lebar gambar */
+        max-width: 48%; /* Dua gambar per baris dengan sedikit ruang di antaranya */
+        margin: 10px 1%; /* Margin yang lebih kecil */
+    }
+}
+
+/* Media Query untuk layar berukuran maksimal 480px */
+@media screen and (max-width: 480px) {
+    .jumbotron {
+        /* Lebih kecil lagi untuk tampilan yang sempit */
+        padding-top: 1rem;
+        height: 30vh;
+    }
+
+    h1 {
+        /* Ukuran font yang lebih kecil */
+        font-size: 0.9rem;
+    }
+
+    p {
+        /* Ukuran font yang lebih kecil */
+        font-size: 0.7rem;
+    }
+
+    .services a {
+        /* Ukuran font yang lebih kecil untuk link */
+        font-size: 1rem;
+        margin: 8px 0; /* Kurangi margin untuk ruang yang lebih efisien */
+    }
+
+    .gambar img {
+        /* Satu gambar per baris */
+        max-width: 94%; /* Hampir penuh lebar, dengan sedikit margin */
+        margin: 10px 3%; /* Margin yang lebih proporsional */
+    }
+}
