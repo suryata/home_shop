@@ -112,6 +112,7 @@ def delete_item_ajax(request, id):
         return HttpResponse(b"DELETED", status = 201)
     return HttpResponseNotFound()
 
+@csrf_exempt
 def create_item_flutter(request):
     if request.method == 'POST':
 
@@ -120,9 +121,9 @@ def create_item_flutter(request):
         new_product = Item.objects.create(
             user = request.user,
             name = data["name"],
-            description = data["description"],
             amount = int(data["amount"]),
-            rarity = data["rarity"],
+            price = int(data["price"]),
+            description = data["description"],
         )
 
         new_product.save()
